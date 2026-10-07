@@ -1,0 +1,1310 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do Caderno ao Big Data</title>
+<link rel="stylesheet" href="fonts/fontes.css">
+<link rel="stylesheet" href="css/estilo.css">
+<link rel="stylesheet" href="css/demos.css">
+</head>
+<body>
+
+<div class="controles-tela" aria-label="Controles da apresentação">
+  <button id="btn-visao" title="Visão geral (O)">Slides</button>
+  <button id="btn-notas" title="Notas (N)">Notas</button>
+  <button id="btn-config" title="Nomes (C)">Nomes</button>
+  <button id="btn-tela" title="Tela cheia (F)">Tela cheia</button>
+</div>
+
+<main id="palco">
+<div class="furos"></div>
+
+<!-- =========================================================
+     BLOCO 1 · ABERTURA · Ambos · 0–4
+     ========================================================= -->
+<section class="slide capa" data-bloco="1" data-nome-bloco="Abertura" data-quem="Ambos" data-tempo="0–4" data-titulo="Capa">
+  <p class="cab">ETEC · Informática · aula sobre bancos de dados</p>
+  <h1>Do caderno<br>da cantina<br><span class="linha2">ao Big Data</span></h1>
+  <p style="font-size:34px;max-width:760px">O que acontece <span class="marca">por baixo dos panos</span> quando um app guarda dados.</p>
+  <div class="autores">
+    <span class="quem">Shoda</span><span class="quem leo">Vono</span>
+  </div>
+  <div class="logos logos-capa">
+    <div class="logo-claro"><img src="img/logo-etec.png" alt="Etec, Escola Técnica Estadual"></div>
+    <div class="logo-escuro"><img src="img/logo-concilig.png" alt="Concilig"></div>
+  </div>
+  <div class="caderno-ilustra" aria-hidden="true">
+    <div class="titulo-cad" data-v="cantina"></div>
+    <div class="entrada escreve" style="--i:0"><span>Ana</span><span>deve R$ 5,00</span></div>
+    <div class="entrada escreve" style="--i:1"><span>Bruno</span><span>pagou</span></div>
+    <div class="entrada escreve riscada" style="--i:2"><span>João</span><span>deve R$ 12,50</span></div>
+    <div class="entrada escreve" style="--i:3"><span>Maria</span><span>deve R$ 3,00</span></div>
+    <div class="entrada escreve" style="--i:4"><span>Pedro</span><span>deve R$ 7,00</span></div>
+    <div class="entrada escreve" style="--i:5"><span>Gabi</span><span>2 coxinhas</span></div>
+    <div class="entrada escreve" style="--i:6"><span>Diego</span><span>deve R$ 4,00</span></div>
+    <div class="entrada escreve" style="--i:7"><span>Isa</span><span>pão de queijo</span></div>
+    <div class="entrada escreve" style="--i:8"><span>Rafa</span><span>deve R$ 9,00</span></div>
+    <div class="entrada escreve" style="--i:9"><span>…</span><span></span></div>
+  </div>
+  <aside class="notas">
+    <p>Apresentem-se rapidamente. Recado de escopo: a aula <b>não é sobre modelagem ou diagrama ER</b>; é sobre o que acontece por baixo dos panos.</p>
+    <p>Atalhos: → avança, ← volta, O visão geral, N notas, T cronômetro, C nomes, F tela cheia, B tela preta.</p>
+  </aside>
+</section>
+
+<section class="slide apresentacao" data-bloco="1" data-quem="Ambos" data-tempo="0–4" data-titulo="Quem somos">
+  <div class="topo"><span>Abertura</span><span class="quem ambos">Ambos</span></div>
+  <h2>Quem está falando</h2>
+  <div class="polaroids">
+    <figure class="polaroid" style="--giro:-3deg">
+      <span class="fita-adesiva"></span>
+      <div class="foto"><img src="img/shoda.png" alt="Foto do Shoda"></div>
+      <figcaption class="mao">Shoda</figcaption>
+    </figure>
+    <figure class="polaroid" style="--giro:2.5deg">
+      <span class="fita-adesiva"></span>
+      <div class="foto"><img class="vono" src="img/vono.webp" alt="Foto do Vono"></div>
+      <figcaption class="mao">Vono</figcaption>
+    </figure>
+  </div>
+  <div class="logos">
+    <div class="logo-claro"><img src="img/logo-etec.png" alt="Etec, Escola Técnica Estadual"></div>
+    <div class="logo-escuro"><img src="img/logo-concilig.png" alt="Concilig"></div>
+  </div>
+  <aside class="notas"><p>Cada um se apresenta em uma frase: nome, o que faz no dia a dia e onde trabalha.</p></aside>
+</section>
+
+<section class="slide" data-bloco="1" data-quem="Ambos" data-tempo="0–4" data-titulo="Banco de dados resolve problemas difíceis">
+  <div class="topo"><span>Abertura</span></div>
+  <h2>Banco de dados não é<br>“onde a gente faz <code>SELECT</code>”</h2>
+  <p style="font-size:34px">É um programa que resolve três problemas difíceis:</p>
+  <div class="tres-problemas">
+    <div class="cartao frag"><span class="mao caneta">1</span><h3>Achar dados rápido</h3><p>entre milhões de registros</p></div>
+    <div class="cartao frag"><span class="mao caneta">2</span><h3>Não perder nada</h3><p>nem quando a luz acaba</p></div>
+    <div class="cartao frag"><span class="mao caneta">3</span><h3>Aguentar todo mundo</h3><p>milhões de pessoas ao mesmo tempo</p></div>
+  </div>
+  <p class="frag nota-lateral">Cada recurso que vocês usam hoje existe porque, um dia, <b>alguém sofreu sem ele</b>.</p>
+  <aside class="notas"><p>Três cliques revelam os três problemas. O último fragmento é a frase-tese da aula.</p></aside>
+</section>
+
+<section class="slide" data-bloco="1" data-quem="Ambos" data-tempo="0–4" data-titulo="Quantos bancos no bolso?">
+  <div class="topo"><span>Abertura</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 560px; align-items:center; flex:1">
+    <div class="col">
+      <div class="pergunta grande"><div class="q">Quantos bancos de dados vocês têm no bolso agora?</div></div>
+      <div class="resposta frag" style="font-size:32px">
+        <span><b>Dezenas.</b> Quase todo app de celular guarda dados num <b class="caneta">SQLite</b>.</span>
+        <span>Também tem SQLite na smart TV, no roteador, no relógio e no avião.</span>
+      </div>
+    </div>
+    <div class="celular frag">
+      <div class="tela-cel">
+        <div class="app" style="--i:0">WhatsApp</div><div class="app" style="--i:1">Agenda</div><div class="app" style="--i:2">Navegador</div>
+        <div class="app" style="--i:3">Fotos</div><div class="app" style="--i:4">Mensagens</div><div class="app" style="--i:5">Música</div>
+        <div class="app" style="--i:6">Mapas</div><div class="app" style="--i:7">Notas</div><div class="app" style="--i:8">Banco</div>
+        <div class="app" style="--i:9">Jogos</div><div class="app" style="--i:10">E-mail</div><div class="app" style="--i:11">Teclado</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notas"><p>Deixe a turma chutar. Depois o celular acende app por app com o selo do SQLite.</p></aside>
+</section>
+
+<section class="slide" data-bloco="1" data-quem="Ambos" data-tempo="0–4" data-titulo="O CantinaApp: o fio condutor">
+  <div class="topo"><span>Abertura</span></div>
+  <div class="linha" style="gap:36px;align-items:flex-end">
+    <div data-tia='{"largura":150}'></div>
+    <div class="col" style="gap:12px">
+      <h2>Esta é a <span class="caneta" data-v="tia"></span>, da <span data-v="cantina"></span>.</h2>
+      <p style="font-size:30px">Vamos acompanhar o que acontece quando o caderno dela vira um app, e o app vira um sucesso nacional. <b>Em cada capítulo, algo quebra.</b></p>
+    </div>
+  </div>
+  <div class="trilha completa"></div>
+  <aside class="notas"><p>Cada clique revela um capítulo com o tamanho e o que quebra. Pode passar rápido: a trilha volta no começo de cada bloco.</p></aside>
+</section>
+
+<!-- =========================================================
+     BLOCO 2 · DO CADERNO AO ARQUIVO · Shoda · 4–11
+     ========================================================= -->
+<section class="slide capitulo" data-bloco="2" data-nome-bloco="Do caderno ao arquivo" data-quem="Shoda" data-tempo="4–11" data-titulo="Capítulos 0 e 1">
+  <span class="num-cap">capítulos 0 e 1</span>
+  <h2>Do caderno ao arquivo</h2>
+  <p class="historia">A <span data-v="tia"></span> anota “fulano deve R$ 5”. Para saber quanto o João deve, folheia <b>página por página</b>. Uma turma transforma o caderno num app de TCC. Com 40 alunos, tudo é instantâneo.</p>
+  <div class="trilha" data-cap="1"></div>
+  <aside class="notas"><p>📺 CAP 01 do vídeo. O banco de dados mais simples de todos é um <b>array na memória</b>.</p></aside>
+</section>
+
+<section class="slide compacto" data-demo="array" data-bloco="2" data-quem="Shoda" data-tempo="4–11" data-titulo="O caderno como array JSON">
+  <div class="topo"><span>O que é um banco de dados?</span><span class="quem">Shoda</span></div>
+  <h2>O banco mais simples: <span class="marca">um array na memória</span></h2>
+  <div class="arr-area interativo"></div>
+  <div class="lado-a-lado" style="grid-template-columns: 640px 1fr; gap:40px">
+    <pre class="codigo" style="font-size:19px;padding:14px 22px"><span class="linha-cod"><span class="k">const</span> caderno = [</span><span class="linha-cod">  { id: <span class="n">1</span>, aluno: <span class="s">"Ana"</span>,   deve: <span class="n">5.00</span> },</span><span class="linha-cod">  { id: <span class="n">2</span>, aluno: <span class="s">"Bruno"</span>, deve: <span class="n">0.00</span> },</span><span class="linha-cod">  { id: <span class="n">3</span>, aluno: <span class="s">"João"</span>,  deve: <span class="n">12.50</span> },</span><span class="linha-cod">  { id: <span class="n">4</span>, aluno: <span class="s">"Maria"</span>, deve: <span class="n">3.00</span> },</span><span class="linha-cod">  { id: <span class="n">5</span>, aluno: <span class="s">"Pedro"</span>, deve: <span class="n">7.00</span> },</span><span class="linha-cod">];</span><span class="linha-cod" data-p="acesso">caderno[<span class="n">2</span>];</span><span class="linha-cod" data-p="find">caderno.find(r =&gt; r.aluno === <span class="s">"Pedro"</span>);</span><span class="linha-cod" data-p="splice">caderno.splice(<span class="n">2</span>, <span class="n">1</span>);</span><span class="linha-cod" data-p="apagado">caderno[<span class="n">2</span>].apagado = <span class="k">true</span>;</span></pre>
+    <div class="col" style="gap:14px">
+      <p class="arr-legenda" style="font-size:26px;min-height:72px"></p>
+      <div class="linha arr-passos" style="gap:8px">
+        <button class="btn" data-p="0">início</button>
+        <button class="btn" data-p="1">caderno[2]</button>
+        <button class="btn" data-p="2">find</button>
+        <button class="btn" data-p="3">splice</button>
+        <button class="btn" data-p="5">apagado = true</button>
+      </div>
+      <div class="pergunta arr-pergunta frag-manual">
+        <div class="q">O que aconteceu com a Maria e o Pedro?</div>
+        <div class="resposta arr-resposta frag-manual">
+          <span><b>Mudaram de posição:</b> apagar do meio obriga a mover todos os que vêm depois. Com 1 milhão de itens, apagar o primeiro move 999.999.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="notas">
+    <p>Cada → executa uma linha: acesso direto, find, splice (pergunta + resposta) e a marca de apagado.</p>
+    <p>Gancho: a marca de apagado é exatamente o que o dBase fazia, e o que os bancos ainda fazem (exclusão lógica, bloco 3).</p>
+  </aside>
+</section>
+
+<section class="slide" data-demo="memoria" data-bloco="2" data-quem="Shoda" data-tempo="4–11" data-titulo="Endereço e tempo constante">
+  <div class="topo"><span>Endereço e tempo de acesso</span><span class="quem">Shoda</span></div>
+  <h2>Pela posição: <span class="caneta">uma conta</span>. Sem a posição: <span class="vermelho">olhar um por um</span>.</h2>
+  <div class="mem-fila interativo"></div>
+  <p class="mem-conta" style="font-size:28px;min-height:40px"></p>
+  <div class="linha interativo" style="gap:22px">
+    <label class="campo">posição <input class="mem-pos" type="number" min="0" max="9" value="4" id="mem-pos"></label>
+    <button class="btn pri mem-ir">Ir direto</button>
+    <button class="btn mem-procurar">Procurar o valor 73</button>
+  </div>
+  <div class="mem-comparar interativo">
+    <label class="campo">tamanho do array: <b class="mem-out-tam"></b>
+      <input class="mem-tam" type="range" min="0" max="6" value="0" id="mem-tam"></label>
+    <div class="mem-cards">
+      <div class="cartao"><small>pela posição</small><b class="mem-out-pos caneta"></b><span>cálculo, sempre (tempo constante)</span></div>
+      <div class="cartao"><small>procurando um por um, no pior caso</small><b class="mem-out-busca vermelho"></b><span>comparações (cresce com os dados)</span></div>
+    </div>
+  </div>
+  <aside class="notas">
+    <p>→ 1: vai direto à posição 4 (4 × 8 = 32 bytes). → 2: procura o 73 olhando casa por casa.</p>
+    <p>Arraste o slider de tamanho: o acesso pela posição continua 1 cálculo; a busca cresce junto com os dados.</p>
+  </aside>
+</section>
+
+<section class="slide" data-demo="fita" data-bloco="2" data-quem="Shoda" data-tempo="4–11" data-titulo="Arquivo append only e dBase">
+  <div class="topo"><span>Quando a memória acaba</span><span class="quem">Shoda</span></div>
+  <h2>O arquivo que só cresce no fim: <i>append only</i></h2>
+  <div class="fita-janela interativo"><div class="fita-trilho"></div></div>
+  <div class="linha" style="gap:20px">
+    <button class="btn pri fita-add">+ registro no fim</button>
+    <p class="fita-formula" style="font-size:26px"></p>
+  </div>
+  <div class="lado-a-lado" style="grid-template-columns: 1.1fr 1fr; gap:40px">
+    <div class="col" style="gap:14px">
+      <p>Anos 80: <b>dBase</b> e o arquivo <code>.DBF</code>, um arquivo por tabela. Cada registro tem <b>tamanho fixo</b>: nome com 100 bytes + telefone com 13 = <b>113 bytes</b>.</p>
+      <pre class="codigo" style="font-size:20px"><span class="k">DO WHILE</span> .NOT. EOF()
+   <span class="k">IF</span> NOME = <span class="s">"JOAO"</span>
+      ? TELEFONE
+   <span class="k">ENDIF</span>
+   <span class="k">SKIP</span>      <span class="c">&amp;&amp; próximo registro</span>
+<span class="k">ENDDO</span></pre>
+    </div>
+    <div class="epoca">
+      <div class="frag"><b>640 KB</b><span>de RAM num PC típico</span></div>
+      <div class="frag"><b>15 MHz</b><span>de processador</span></div>
+      <div class="frag"><b>Disquete</b><span>o “backup” do fim do dia, porque arquivos corrompiam</span></div>
+    </div>
+  </div>
+  <aside class="notas">
+    <p>→ acrescenta registros (o byte inicial é calculado). Depois os fragmentos mostram o contraste de época: o celular de vocês tem milhares de vezes mais.</p>
+    <p>Procurar um dado era um loop <code>DO WHILE</code> comparando registro por registro.</p>
+  </aside>
+</section>
+
+<section class="slide centro" data-bloco="2" data-quem="Shoda" data-tempo="4–11" data-titulo="Com 40 alunos faz diferença?">
+  <div class="pergunta grande" style="margin:auto 0 0"><div class="q">Com 40 alunos, faz diferença procurar um por um?</div></div>
+  <div class="resposta frag" style="font-size:36px;margin-bottom:auto;text-align:left;max-width:1100px">
+    <span><b>Nenhuma perceptível.</b> É exatamente por isso que o jeito errado parece certo no TCC:</span>
+    <span class="mao caneta" style="font-size:64px;line-height:1.1">“com 100 registros tudo parece rápido”</span>
+  </div>
+  <aside class="notas"><p>Fecha o bloco 2. Transição: e quando a ETEC inteira adotar?</p></aside>
+</section>
+
+<!-- =========================================================
+     BLOCO 3 · ÍNDICES E B-TREE · Shoda (+ Vono) · 11–24
+     ========================================================= -->
+<section class="slide capitulo" data-bloco="3" data-nome-bloco="Índices e B-Tree" data-quem="Shoda" data-tempo="11–24" data-titulo="Capítulo 2">
+  <span class="num-cap">capítulo 2</span>
+  <h2>A ETEC inteira adotou</h2>
+  <p class="historia">2 mil alunos. A <span data-v="tia"></span> digita “João” e espera… e espera…</p>
+  <div class="busca-lenta"><span>🔍 João</span><i></i><small>procurando em 2.000 registros…</small></div>
+  <div class="trilha" data-cap="2"></div>
+  <aside class="notas"><p>📺 CAP 02 e 04. Preparar a dinâmica: o Vono vai sair da sala na rodada 2.</p></aside>
+</section>
+
+<section class="slide compacto" data-demo="sala" data-bloco="3" data-quem="Shoda + Vono" data-tempo="11–24" data-titulo="Dinâmica: quem é o João?">
+  <div class="topo"><span>Dinâmica</span><span class="quem">Shoda</span><span class="quem leo">Vono</span></div>
+  <h2>Quem é o João?</h2>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 470px; gap:40px; flex:1">
+    <div class="sala-mapa interativo"></div>
+    <div class="col" style="gap:18px">
+      <div class="linha" style="gap:8px">
+        <button class="btn sala-modo" data-modo="1">Rodada 1: sem índice</button>
+        <button class="btn sala-modo" data-modo="2">Rodada 2: com índice</button>
+      </div>
+      <div class="sala-contador"><b>0</b><span>perguntas</span></div>
+      <div class="sala-ficha"><small>ficha de índice</small><b>Ana → F3·C2</b></div>
+      <p class="sala-msg" style="font-size:23px"></p>
+      <div class="linha" style="gap:8px">
+        <button class="btn pri sala-perguntar">+1 pergunta</button>
+        <button class="btn sala-auto">▶ automático</button>
+        <button class="btn sala-reset">recomeçar</button>
+      </div>
+      <div class="linha" style="gap:14px">
+        <label class="campo">fileiras <input class="sala-f" type="number" min="2" max="9" value="5" id="sala-f"></label>
+        <label class="campo">cadeiras <input class="sala-c" type="number" min="2" max="9" value="6" id="sala-c"></label>
+      </div>
+      <small>Clique numa cadeira para dizer onde o João (rodada 1) ou a Ana (rodada 2) está.</small>
+    </div>
+  </div>
+  <aside class="notas">
+    <p><b>Rodada 1 (Shoda):</b> pergunte o nome de cada aluno, fileira por fileira. Cada → acende a próxima cadeira. A turma conta junto.</p>
+    <p><b>Rodada 2:</b> o Vono sai. Shoda escolhe outro aluno (ex.: Ana), anota a coordenada. Vono volta e recebe só “fileira 3, cadeira 2”. → faz a seta voar.</p>
+    <p>Fechamento: “A anotação que eu fiz é o índice. Gastei tempo antes para a busca ser instantânea na hora.”</p>
+  </aside>
+</section>
+
+<section class="slide" data-bloco="3" data-quem="Shoda + Vono" data-tempo="11–24" data-titulo="Rodada 3: o custo do índice">
+  <div class="topo"><span>Rodada 3: o custo do índice</span></div>
+  <h2>E se a sala mudar?</h2>
+  <div class="custos">
+    <div class="cartao"><p class="q-custo">A Ana <b>trocou de lugar</b>. E a minha anotação?</p><p class="frag r-custo">Fica errada. Toda mudança obriga a <b>atualizar o índice</b>.</p></div>
+    <div class="cartao"><p class="q-custo">Chegaram <b>10 alunos novos</b>.</p><p class="frag r-custo">Mais 10 anotações para fazer <b>antes</b> de poder buscá-los.</p></div>
+    <div class="cartao"><p class="q-custo">E se eu quiser achar alguém pela <b>data de aniversário</b>?</p><p class="frag r-custo">A anotação por nome não serve. É preciso <b>outro índice</b>.</p></div>
+  </div>
+  <p class="frag nota-lateral" style="font-size:32px">Mais índices = <b>mais papel</b> (espaço) e <b>mais trabalho</b> a cada mudança (tempo de escrita).</p>
+  <aside class="notas"><p>Pergunte cada uma antes de revelar a resposta.</p></aside>
+</section>
+
+<section class="slide" data-demo="dobra" data-bloco="3" data-quem="Shoda" data-tempo="11–24" data-titulo="Índice: linear x logarítmico">
+  <div class="topo"><span>Ideia central</span><span class="quem">Shoda</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 1fr; gap:56px">
+    <div class="col">
+      <h2>Índice: uma lista <span class="marca">ordenada</span> que aponta onde cada um está</h2>
+      <p>Como a ficha da dinâmica, ou o índice no fim de um livro.</p>
+      <ul>
+        <li>Sem índice, a busca é <b class="vermelho">linear</b>: dobrou os dados, dobrou o tempo.</li>
+        <li>Com índice, é <b class="caneta">logarítmica</b>: dobrou os dados, quase nada muda.</li>
+      </ul>
+      <p class="peq">Conta do Akita: 1 ms por registro lido. Com índice ordenado, busca binária.</p>
+    </div>
+    <div class="col">
+      <table class="tab dobra-tab">
+        <thead><tr><th class="num">registros</th><th class="num">sem índice</th><th class="num">com índice</th></tr></thead>
+        <tbody class="dobra-corpo"></tbody>
+      </table>
+      <button class="btn dobra-mais" style="align-self:flex-start">Dobrar os dados</button>
+    </div>
+  </div>
+  <aside class="notas"><p>Cada → dobra os dados (depois pula para 1 milhão e 100 milhões). 10 mil registros: cerca de 10 s sem índice, cerca de 14 ms com índice.</p></aside>
+</section>
+
+<section class="slide compacto" data-bloco="3" data-quem="Shoda" data-tempo="11–24" data-titulo="Índices ocupam espaço e gastam tempo">
+  <div class="topo"><span>Índices não são de graça</span><span class="quem">Shoda</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 620px; gap:50px">
+    <div class="col">
+      <h2>Índices ocupam espaço e gastam tempo</h2>
+      <ul style="font-size:27px">
+        <li>No exemplo do Akita em dBase, os índices ficaram quase <b>o dobro</b> do tamanho da tabela.</li>
+        <li>Cada <code>INSERT</code>, <code>UPDATE</code> ou <code>DELETE</code> atualiza <b>todos</b> os índices. Com 3 índices, uma inserção pode custar cerca de <b>4 vezes mais</b>.</li>
+        <li>Curiosidade: no dBase os índices corrompiam tanto que todo sistema tinha no menu a opção <b>“Reindexar”</b>.</li>
+      </ul>
+    </div>
+    <div class="insert-arvores">
+      <div class="insert-chega"><code>INSERT INTO alunos …</code></div>
+      <div class="arvores3">
+        <div class="mini-arv frag" style="--i:0"><svg viewBox="0 0 120 90"><rect x="40" y="4" width="40" height="18" rx="4"/><rect x="6" y="64" width="34" height="18" rx="4"/><rect x="80" y="64" width="34" height="18" rx="4"/><path d="M50 22 L23 64 M70 22 L97 64"/></svg><span>índice por nome</span></div>
+        <div class="mini-arv frag" style="--i:1"><svg viewBox="0 0 120 90"><rect x="40" y="4" width="40" height="18" rx="4"/><rect x="6" y="64" width="34" height="18" rx="4"/><rect x="80" y="64" width="34" height="18" rx="4"/><path d="M50 22 L23 64 M70 22 L97 64"/></svg><span>índice por turma</span></div>
+        <div class="mini-arv frag" style="--i:2"><svg viewBox="0 0 120 90"><rect x="40" y="4" width="40" height="18" rx="4"/><rect x="6" y="64" width="34" height="18" rx="4"/><rect x="80" y="64" width="34" height="18" rx="4"/><path d="M50 22 L23 64 M70 22 L97 64"/></svg><span>índice por nascimento</span></div>
+      </div>
+      <div class="pergunta frag" style="margin-top:10px"><div class="q" style="font-size:32px">Vou criar índice em TODAS as colunas para deixar tudo rápido. Boa ideia?</div>
+        <div class="resposta frag" style="font-size:24px"><span><b>Não.</b> É como ter uma lista por nome, outra por idade, outra pela cor do tênis… e reescrever todas a cada aluno novo. Crie índice só para <b>as buscas que você realmente faz</b>.</span></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notas"><p>Os três primeiros cliques acendem as três árvores que um único INSERT precisa atualizar. Depois a pergunta (mãos levantadas) e a resposta.</p></aside>
+</section>
+
+<section class="slide" data-demo="vacuum" data-bloco="3" data-quem="Shoda" data-tempo="11–24" data-titulo="Exclusão lógica e VACUUM">
+  <div class="topo"><span>Apagar não apaga</span><span class="quem">Shoda</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 640px; gap:50px">
+    <div class="col">
+      <h2>Apagar <span class="marca">não apaga</span></h2>
+      <ul style="font-size:26px">
+        <li><b>No .DBF:</b> apagar só ligava uma marca, a <b>exclusão lógica</b>. Para recuperar espaço, o <code>PACK</code> reescrevia o arquivo inteiro (e precisava de espaço livre do tamanho dele).</li>
+        <li><b>Hoje</b>, no SQLite e no Postgres, o arquivo não encolhe sozinho. O <code>VACUUM</code> reprocessa e devolve o espaço ao disco.</li>
+      </ul>
+      <div class="pergunta" style="margin-top:8px"><div class="q">Apaguei metade dos registros. O arquivo diminuiu?</div>
+        <div class="resposta frag"><span><b>Não.</b> Só depois do <code>VACUUM</code>.</span></div></div>
+    </div>
+    <div class="col interativo">
+      <div class="vac-arquivo"><span>📄 alunos.db</span><b class="vac-tam">48 KB</b></div>
+      <div class="vac-grade"></div>
+      <p class="vac-status" style="font-size:24px;min-height:70px"></p>
+      <div class="linha" style="gap:10px">
+        <button class="btn perigo vac-del">DELETE metade</button>
+        <button class="btn pri vac-vac">VACUUM</button>
+        <button class="btn vac-reset">recomeçar</button>
+      </div>
+    </div>
+  </div>
+  <aside class="notas"><p>→ 1: DELETE (os blocos ficam cinza, o tamanho não muda). → 2: VACUUM compacta e o tamanho cai pela metade. Depois a resposta da pergunta.</p></aside>
+</section>
+
+<section class="slide" data-demo="navio" data-bloco="3" data-quem="Shoda" data-tempo="11–24" data-titulo="O SQLite nasceu num navio">
+  <div class="topo"><span>Curiosidade</span><span class="quem">Shoda</span></div>
+  <h2>O SQLite nasceu num navio de guerra</h2>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 820px; gap:44px; flex:1">
+    <div class="col" style="gap:16px;font-size:26px">
+      <p><b>Primavera de 2000.</b> D. Richard Hipp trabalhava num sistema de <b>controle de avarias</b> do contratorpedeiro <b>USS Oscar Austin</b>: onde há fogo, água entrando, compartimento danificado.</p>
+      <p class="navio-legenda" style="min-height:120px"></p>
+      <p class="peq">Versão 1.0 em agosto de 2000. A 2.0 (2001) ganhou árvore B própria e transações. Fonte: <a href="https://en.wikipedia.org/wiki/SQLite">Wikipedia</a>.</p>
+      <div class="linha" style="gap:8px">
+        <button class="btn navio-btn" data-p="0">Servidor no porão</button>
+        <button class="btn navio-btn" data-p="1">Servidor caiu</button>
+        <button class="btn navio-btn" data-p="2">Um arquivo .db</button>
+      </div>
+    </div>
+    <div class="navio-cena interativo">
+      <svg viewBox="0 0 820 470" width="100%" role="img" aria-label="Navio com servidor de banco no porão e painel na ponte">
+        <defs><linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCE6F7"/><stop offset="1" stop-color="#F5F7FB"/></linearGradient></defs>
+        <rect width="820" height="470" rx="18" fill="url(#ceu)"/>
+        <g class="nv-barco">
+          <path d="M60 300 L760 300 L700 380 L120 380 Z" fill="#6E7A90" stroke="#15213C" stroke-width="4"/>
+          <rect x="300" y="200" width="230" height="100" fill="#8792A6" stroke="#15213C" stroke-width="4"/>
+          <rect x="360" y="140" width="120" height="60" fill="#9AA4B6" stroke="#15213C" stroke-width="4"/>
+          <rect x="412" y="80" width="12" height="60" fill="#15213C"/>
+          <path d="M150 300 L270 300 L250 270 L170 270 Z" fill="#8792A6" stroke="#15213C" stroke-width="4"/>
+          <rect x="200" y="250" width="70" height="8" fill="#15213C"/>
+          <!-- painel na ponte -->
+          <g class="nv-painel">
+            <rect x="320" y="215" width="190" height="70" rx="6" class="nv-tela"/>
+            <g class="nv-luzes"><rect x="334" y="228" width="34" height="18" rx="3"/><rect x="376" y="228" width="34" height="18" rx="3"/><rect x="418" y="228" width="34" height="18" rx="3"/><rect x="460" y="228" width="34" height="18" rx="3"/><rect x="334" y="254" width="34" height="18" rx="3"/><rect x="376" y="254" width="34" height="18" rx="3" class="alerta"/><rect x="418" y="254" width="34" height="18" rx="3"/><rect x="460" y="254" width="34" height="18" rx="3"/></g>
+            <text x="415" y="258" text-anchor="middle" class="nv-sem">SEM BANCO</text>
+          </g>
+          <!-- porão -->
+          <g class="nv-servidor"><rect x="540" y="318" width="90" height="48" rx="6" fill="#15213C"/><circle cx="560" cy="342" r="7" class="nv-led"/><rect x="576" y="334" width="44" height="5" fill="#5B6680"/><rect x="576" y="346" width="44" height="5" fill="#5B6680"/><text x="585" y="312" text-anchor="middle" class="nv-rot">Informix</text></g>
+          <g class="nv-arquivo"><path d="M560 318 h46 l14 14 v38 h-60 Z" fill="#fff" stroke="#2048C2" stroke-width="4"/><text x="590" y="356" text-anchor="middle" class="nv-db">.db</text></g>
+          <path class="nv-fio" d="M585 318 C585 290 470 300 460 285" fill="none" stroke-width="4" stroke-dasharray="8 7"/>
+        </g>
+        <path class="nv-mar" d="M0 360 Q 40 345 80 360 T 160 360 T 240 360 T 320 360 T 400 360 T 480 360 T 560 360 T 640 360 T 720 360 T 800 360 T 880 360 V 470 H 0 Z" fill="#2048C2" opacity=".85"/>
+        <path class="nv-mar2" d="M0 385 Q 40 372 80 385 T 160 385 T 240 385 T 320 385 T 400 385 T 480 385 T 560 385 T 640 385 T 720 385 T 800 385 T 880 385 V 470 H 0 Z" fill="#142F86"/>
+      </svg>
+    </div>
+  </div>
+  <div class="pergunta frag" style="position:absolute;right:90px;bottom:80px;max-width:760px"><div class="q" style="font-size:34px">Por que um navio de guerra não pode depender de um servidor de banco de dados?</div>
+    <div class="resposta frag" style="font-size:26px"><span>Se o servidor cai (ou o cabo de rede é atingido), tudo para. Um arquivo local não tem esse <b>ponto único de falha</b>.</span></div></div>
+  <aside class="notas"><p>→ 1: o servidor cai e o painel apaga. → 2: um único arquivo, o painel volta. Depois a pergunta. Gancho com os blocos 6 e 7 (ponto único de falha).</p></aside>
+</section>
+
+<section class="slide" data-demo="capacidade" data-bloco="3" data-quem="Shoda" data-tempo="11–24" data-titulo="SQLite por dentro: a árvore B">
+  <div class="topo"><span>SQLite por dentro</span><span class="quem">Shoda</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 1fr; gap:56px">
+    <div class="col">
+      <h2>Por dentro, uma <span class="marca">árvore B</span></h2>
+      <ul>
+        <li>Sucessor espiritual do dBase: um arquivo, sem servidor, menos de 1 MB de RAM. Provavelmente o banco <b>mais usado do mundo</b>.</li>
+        <li><b>Tabela e índices</b> são árvores B. Postgres, MySQL, MongoDB e até sistemas de arquivos usam variantes dela.</li>
+        <li>O “B” <b>não</b> é de binária. Pense em <b class="caneta">balanceada</b>: todas as folhas na mesma profundidade.</li>
+        <li>Cada nó tem <b>muitos filhos</b>: a árvore fica baixa e larga. Os dados ficam em <b>páginas</b> lidas juntas do disco.</li>
+      </ul>
+    </div>
+    <div class="col cartao interativo cap-calc">
+      <label class="campo">chaves por nó: <b class="cap-out-k"></b><input class="cap-k" type="range" min="2" max="500" value="100" id="cap-k"></label>
+      <label class="campo">andares: <b class="cap-out-n"></b><input class="cap-n" type="range" min="1" max="5" value="3" id="cap-n"></label>
+      <div class="cap-total cap-out-total"></div>
+      <p class="cap-frase" style="font-size:26px"></p>
+    </div>
+  </div>
+  <aside class="notas"><p>Com 100 chaves por nó: 3 andares, cerca de 1 milhão; 4 andares, 100 milhões. Mexa nos sliders se a turma perguntar.</p></aside>
+</section>
+
+<section class="slide compacto" data-demo="arvore" data-modo="crescer" data-bloco="3" data-quem="Shoda" data-tempo="11–24" data-titulo="A árvore B crescendo">
+  <div class="topo"><span>Mostrar a árvore B crescendo</span><span class="quem">Shoda</span></div>
+  <h2>A árvore cresce <span class="caneta">para os lados</span></h2>
+  <svg class="arv-svg interativo" preserveAspectRatio="xMidYMid meet" style="height:370px;width:100%"></svg>
+  <p class="arv-msg" style="font-size:25px;min-height:64px"></p>
+  <div class="arv-barra interativo">
+    <div class="arv-contadores">
+      <div><b class="arv-c-reg">0</b><small>registros</small></div>
+      <div><b class="arv-c-and">0</b><small>andares</small></div>
+      <div><b class="arv-c-fol">0</b><small>folhas</small></div>
+      <div><b class="arv-c-pas">0</b><small>passos p/ achar</small></div>
+    </div>
+    <div class="col" style="gap:10px">
+      <div class="linha" style="gap:8px">
+        <button class="btn pri arv-prox">Inserir</button>
+        <form class="arv-form linha" style="gap:8px"><input class="arv-nome" type="text" placeholder="um nome da turma" id="arv-nome-crescer" style="padding:10px 12px;border:2px solid var(--tinta);border-radius:8px;font-size:21px;width:220px"><button class="btn">Inserir</button></form>
+      </div>
+      <div class="linha" style="gap:8px">
+        <button class="btn arv-preset" data-t="1">Tamanho 1</button>
+        <button class="btn arv-preset" data-t="2">Tamanho 2</button>
+        <button class="btn arv-preset" data-t="3">Tamanho 3</button>
+        <label class="campo" style="margin-left:10px">poucas <input class="arv-slider" type="range" min="1" max="30" value="2" id="arv-slider" style="width:220px"> muitas folhas · <b class="arv-slider-out">2</b></label>
+      </div>
+    </div>
+  </div>
+  <aside class="notas">
+    <p>Para caber na tela, no máximo <b>2 nomes por nó</b> (bancos reais usam centenas).</p>
+    <p>→ insere Pedro (o nó estoura e o João sobe), Bruno, Maria (tamanho 2) e depois mostra o tamanho 3 do roteiro: 17 nomes, 9 folhas, 3 andares.</p>
+    <p>Modo turma: digite um nome que a turma escolher. O slider mostra que os registros explodem e os andares quase não mudam.</p>
+  </aside>
+</section>
+
+<section class="slide compacto" data-demo="arvore" data-modo="buscar" data-bloco="3" data-quem="Shoda" data-tempo="11–24" data-titulo="Buscar nos galhos">
+  <div class="topo"><span>Buscar nos galhos</span><span class="quem">Shoda</span></div>
+  <h2>Descendo pelos galhos</h2>
+  <svg class="arv-svg interativo" preserveAspectRatio="xMidYMid meet" style="height:330px;width:100%"></svg>
+  <div class="lado-a-lado" style="grid-template-columns: 430px 1fr; gap:36px">
+    <div class="col interativo" style="gap:12px">
+      <div class="linha" style="gap:8px">
+        <button class="btn arv-busca-rapida" data-n="João">João</button>
+        <button class="btn arv-busca-rapida" data-n="Thiago">Thiago</button>
+        <button class="btn arv-busca-rapida" data-n="Kevin">Kevin</button>
+      </div>
+      <form class="arv-form linha" style="gap:8px"><input class="arv-nome" type="text" placeholder="nome que a turma escolher" id="arv-nome-buscar" style="padding:10px 12px;border:2px solid var(--tinta);border-radius:8px;font-size:21px;width:290px"><button class="btn pri">Buscar</button></form>
+      <div class="arv-contadores"><div><b class="arv-c-pas">0</b><small>passos</small></div><div><b class="arv-c-reg">0</b><small>registros</small></div></div>
+    </div>
+    <div class="col" style="gap:8px">
+      <ol class="arv-passos"></ol>
+      <p class="arv-msg" style="font-size:25px"></p>
+    </div>
+  </div>
+  <aside class="notas">
+    <p>→ busca João (3 passos), depois Thiago (a turma guia: depois de Otávio → direita; achou em 2), depois Kevin (não existe, sabe em 3 passos).</p>
+  </aside>
+</section>
+
+<section class="slide" data-bloco="3" data-quem="Shoda" data-tempo="11–24" data-titulo="Poucas x muitas folhas">
+  <div class="topo"><span>Comparar lado a lado</span><span class="quem">Shoda</span></div>
+  <h2>Os registros explodiram. Os passos, não.</h2>
+  <table class="tab" style="font-size:32px;max-width:1200px">
+    <thead><tr><th></th><th class="num">poucas folhas</th><th class="num">muitas folhas</th><th class="num">banco real</th></tr></thead>
+    <tbody>
+      <tr><td>Registros</td><td class="num">2</td><td class="num">17</td><td class="num"><b>~1 milhão</b></td></tr>
+      <tr><td>Andares</td><td class="num">1</td><td class="num">3</td><td class="num">3</td></tr>
+      <tr class="destaque"><td>Passos para achar qualquer um</td><td class="num">1</td><td class="num">até 3</td><td class="num"><b>até 3</b></td></tr>
+    </tbody>
+  </table>
+  <p class="frag" style="font-size:36px">Isso é a busca <b class="caneta">logarítmica</b>.</p>
+  <aside class="notas"><p>Fecha a árvore. Próximo: o duelo 1, os mesmos números medidos num SQLite de verdade.</p></aside>
+</section>
+
+<section class="slide" data-demo="duelo" data-bloco="3" data-quem="Shoda" data-tempo="11–24" data-titulo="Duelo 1: sem índice x com índice">
+  <div class="topo"><span>⚔️ Duelo 1</span><span class="quem">Shoda</span><span class="chip real">medido de verdade</span></div>
+  <h2>Sem índice x com índice</h2>
+  <pre class="codigo" style="font-size:24px"><span class="k">SELECT</span> * <span class="k">FROM</span> alunos <span class="k">WHERE</span> nome = <span class="s">'João Costa Lima 99999'</span>;</pre>
+  <div class="duelo">
+    <div class="lado">
+      <div class="cab-lado"><span class="letra">A</span>sem índice</div>
+      <p class="plano"><code>SCAN alunos</code> lê a tabela inteira</p>
+      <div class="pista" data-ms="8.3" data-rot="8,3 ms"><i></i><b class="tempo"></b></div>
+    </div>
+    <div class="lado">
+      <div class="cab-lado"><span class="letra">B</span>depois de <code>CREATE INDEX idx_nome ON alunos(nome)</code></div>
+      <p class="plano"><code>SEARCH alunos USING INDEX idx_nome</code></p>
+      <div class="pista" data-ms="0.005" data-rot="0,005 ms"><i></i><b class="tempo"></b></div>
+    </div>
+    <div class="voto mao">Qual é mais rápida? Quanto?</div>
+    <div class="carimbo-mult">≈ 1.600×</div>
+  </div>
+  <p class="frag nota-lateral">A diferença só cresce com mais dados. É a dinâmica das fileiras em números.</p>
+  <aside class="notas"><p>Deixe a turma chutar quantas vezes. → roda a corrida. 100 mil alunos num SQLite, média de várias execuções.</p></aside>
+</section>
+
+<section class="slide" data-demo="duelo" data-bloco="3" data-quem="Shoda" data-tempo="11–24" data-titulo="Duelo 2: LIKE prefixo x %no começo">
+  <div class="topo"><span>⚔️ Duelo 2</span><span class="quem">Shoda</span><span class="chip opcional">opcional</span></div>
+  <h2><code>LIKE</code> com o <code>%</code> no fim ou no começo</h2>
+  <div class="duelo">
+    <div class="lado">
+      <div class="cab-lado"><span class="letra">A</span>prefixo</div>
+      <pre class="codigo" style="font-size:21px"><span class="k">WHERE</span> nome <span class="k">LIKE</span> <span class="s">'Leonardo Silva%'</span></pre>
+      <p class="plano"><code>SEARCH … (nome&gt;? AND nome&lt;?)</code></p>
+      <div class="pista" data-ms="0.11" data-rot="0,11 ms"><i></i><b class="tempo"></b></div>
+    </div>
+    <div class="lado">
+      <div class="cab-lado"><span class="letra">B</span><code>%</code> no início</div>
+      <pre class="codigo" style="font-size:21px"><span class="k">WHERE</span> nome <span class="k">LIKE</span> <span class="s">'%Silva 99999'</span></pre>
+      <p class="plano"><code>SCAN …</code></p>
+      <div class="pista" data-ms="4.9" data-rot="4,9 ms"><i></i><b class="tempo"></b></div>
+    </div>
+    <div class="voto mao">Qual usa o índice?</div>
+    <div class="carimbo-mult">≈ 45×</div>
+  </div>
+  <p class="frag nota-lateral">Na lista alfabética, achar quem <b>começa</b> com “Leo” é fácil. Quem <b>termina</b> com “Silva” exige ler a lista inteira.</p>
+  <p class="frag peq">Nota técnica: no SQLite o <code>LIKE</code> só usa índice com <code>PRAGMA case_sensitive_like = ON</code> ou índice <code>COLLATE NOCASE</code>; no Postgres, com <code>text_pattern_ops</code>. Para buscar no meio do texto existe <i>full-text search</i>.</p>
+  <aside class="notas"><p>⏭️ Opcional: pule se o tempo apertar.</p></aside>
+</section>
+
+<!-- =========================================================
+     BLOCO 4 · QUEDA DE LUZ E TRAVAS · Vono · 24–30
+     ========================================================= -->
+<section class="slide capitulo" data-bloco="4" data-nome-bloco="Queda de luz e travas" data-quem="Vono" data-tempo="24–30" data-titulo="Capítulo 3">
+  <span class="num-cap">capítulo 3</span>
+  <h2>A queda de luz</h2>
+  <p class="historia">Sexta-feira, a <span data-v="tia"></span> roda a recarga de crédito de todos os alunos. No meio do processo, <b>acaba a luz</b>. Quando volta, alguns receberam, outros não, e um recebeu duas vezes.</p>
+  <div class="trilha" data-cap="3"></div>
+  <aside class="notas"><p>📺 CAP 03 e 06. Passa para o Vono.</p></aside>
+</section>
+
+<section class="slide" data-demo="luz" data-bloco="4" data-quem="Vono" data-tempo="24–30" data-titulo="Recarga e queda de luz">
+  <div class="topo"><span>Se a energia acabar, posso confiar nos dados?</span><span class="quem leo">Vono</span></div>
+  <h2 class="luz-titulo"></h2>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 1fr; gap:44px; flex:1">
+    <div class="col" style="gap:14px">
+      <div class="luz-progresso"><div class="luz-barra"><i></i></div><b class="luz-pct">0%</b></div>
+      <table class="tab luz-tab"><thead><tr><th>aluno</th><th class="num">saldo</th><th></th></tr></thead><tbody class="luz-corpo"></tbody></table>
+    </div>
+    <div class="col" style="gap:16px">
+      <p class="luz-msg" style="font-size:28px;min-height:120px"></p>
+      <div class="luz-logbox"><small>write-ahead log</small><ol class="luz-log"></ol></div>
+      <div class="linha interativo" style="gap:8px;margin-top:auto">
+        <button class="btn pri luz-rodar">▶ rodar recarga</button>
+        <button class="btn luz-a">Final A: dBase</button>
+        <button class="btn luz-b">Final B: WAL</button>
+        <button class="btn luz-reset">recomeçar</button>
+      </div>
+    </div>
+  </div>
+  <div class="luz-apagao"></div>
+  <aside class="notas">
+    <p>→ 1: a recarga roda e a luz cai no João. → 2: final A (dBase, <code>REPLACE</code> por cima: corrompido, uns sim, outros não, um 2×). → 3: final B (WAL rebobina, original intacto).</p>
+    <p>Exemplo do Akita: quando SP ganhou o 9º dígito em 2012, foi preciso atualizar todos os telefones de uma vez.</p>
+  </aside>
+</section>
+
+<section class="slide" data-bloco="4" data-quem="Vono" data-tempo="24–30" data-titulo="WAL e ACID">
+  <div class="topo"><span>A promessa dos bancos relacionais</span><span class="quem leo">Vono</span></div>
+  <h2>Primeiro <span class="marca">anota</span>, depois aplica</h2>
+  <p style="font-size:26px">O <b>write-ahead log</b> anota a mudança num arquivo separado antes de mexer. Se a luz cair, o original está intacto e o log diz o que foi confirmado. NTFS e ext4 fazem o mesmo com o <i>journal</i>.</p>
+  <div class="acid">
+    <div class="frag"><b>A</b><h3>Atomicidade</h3><p>Ou tudo acontece, ou nada.</p></div>
+    <div class="frag"><b>C</b><h3>Consistência</h3><p>As regras nunca são quebradas.</p></div>
+    <div class="frag"><b>I</b><h3>Isolamento</h3><p>Em paralelo dá o mesmo resultado que em fila.</p></div>
+    <div class="frag"><b>D</b><h3>Durabilidade</h3><p>Se o banco disse “ok”, está no disco.</p></div>
+  </div>
+  <div class="pergunta frag"><div class="q">Acabou a luz no meio de uma transferência Pix. O que o banco deve fazer?</div>
+    <div class="resposta frag"><span>Voltar ao último estado consistente: ou o débito <b>e</b> o crédito aconteceram, ou <b>nenhum</b> dos dois.</span></div></div>
+  <aside class="notas"><p>Revele as quatro letras uma a uma, depois a pergunta do Pix.</p></aside>
+</section>
+
+<section class="slide" data-demo="travas" data-bloco="4" data-quem="Vono" data-tempo="24–30" data-titulo="Travas: o último salgado">
+  <div class="topo"><span>Controle de gravações e travas</span><span class="quem leo">Vono</span></div>
+  <h2>Dois caixas, um salgado</h2>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 520px; gap:44px; flex:1">
+    <div class="trv-cena interativo">
+      <div class="trv-cx trv-cx1"><div class="balao"></div><div data-tia='{"largura":160,"avental":"#2048C2"}'></div><small>caixa 1</small></div>
+      <div class="trv-meio"><div class="trv-salgado">🥟</div><div class="trv-estoque">estoque: <b>1</b></div><div class="trv-cadeado">🔒</div></div>
+      <div class="trv-cx trv-cx2"><div class="balao"></div><div data-tia='{"largura":160,"avental":"#138257"}'></div><small>caixa 2</small></div>
+    </div>
+    <div class="col" style="gap:14px;font-size:25px">
+      <p class="trv-msg" style="font-size:28px;min-height:120px"></p>
+      <div class="linha interativo" style="gap:8px"><button class="btn trv-modo" data-m="sem">Sem trava</button><button class="btn trv-modo" data-m="com">Com trava</button></div>
+      <p><b>Anos 90:</b> um PC virava “servidor de arquivos” e todos abriam o mesmo <code>.DBF</code>. Quem gravava <b>travava o arquivo inteiro</b>; se a trava falhasse, arquivo corrompido.</p>
+      <p><b>Hoje:</b> trava <b>por linha</b>. Com WAL, quem só quer ler continua lendo.</p>
+    </div>
+  </div>
+  <aside class="notas"><p>Pergunte antes: “Dois caixas vendem o último salgado no mesmo segundo. Quem fica com ele?” → 1: sem trava (estoque −1). → 2: com trava (o segundo recebe “esgotado”).</p></aside>
+</section>
+
+<!-- =========================================================
+     BLOCO 5 · O ESTAGIÁRIO E O LOOP · Vono · 30–40
+     ========================================================= -->
+<section class="slide capitulo" data-bloco="5" data-nome-bloco="O estagiário e o loop" data-quem="Vono" data-tempo="30–40" data-titulo="Capítulo 4">
+  <span class="num-cap">capítulo 4</span>
+  <h2>O estagiário e o loop</h2>
+  <p class="historia">O CantinaApp agora tem servidor de verdade e um estagiário novo. A diretoria pede: “dê <b>10% de crédito extra</b> para todos do noturno”. O script do estagiário roda… <b>a tarde inteira</b>.</p>
+  <div class="trilha" data-cap="4"></div>
+  <aside class="notas"><p>📺 CAP 07, 08 e 09.</p></aside>
+</section>
+
+<section class="slide" data-bloco="5" data-quem="Vono" data-tempo="30–40" data-titulo="Cliente-servidor">
+  <div class="topo"><span>Do cliente que mexe no arquivo ao servidor</span><span class="quem leo">Vono</span></div>
+  <h2>Só <span class="marca">um</span> programa toca nos arquivos</h2>
+  <table class="tab" style="font-size:25px">
+    <thead><tr><th>Antes (anos 80–90)</th><th>Depois (cliente-servidor)</th></tr></thead>
+    <tbody>
+      <tr><td>Cada PC abria o <code>.DBF</code> <b>direto</b></td><td>Só o <b>servidor</b> toca nos arquivos</td></tr>
+      <tr><td>As regras dependiam da versão do programa em cada máquina</td><td>As regras ficam <b>no servidor</b>, iguais para todos</td></tr>
+      <tr><td>Gravação simultânea corrompia o arquivo</td><td>O servidor organiza fila, travas e transações</td></tr>
+      <tr><td>Pedido inválido era executado mesmo assim</td><td>O servidor <b>recusa</b> o pedido inválido</td></tr>
+    </tbody>
+  </table>
+  <div class="lado-a-lado" style="gap:40px">
+    <p class="frag" style="font-size:26px"><b>Na cantina:</b> antes, cada caixa riscava o mesmo caderno da secretaria ao mesmo tempo. Depois, só <b>a tia da secretaria</b> mexe no caderno; os caixas <b>pedem</b>, e ela organiza a fila e recusa pedidos absurdos.</p>
+    <p class="frag nota-lateral" style="font-size:30px">A grande lição para quem já sabe SQL: <b class="caneta">peça o mínimo e deixe o servidor trabalhar.</b></p>
+  </div>
+  <aside class="notas"><p>Os clientes só pedem, e pedem em SQL. Todo dado que atravessa a rede custa memória, CPU e tempo.</p></aside>
+</section>
+
+<section class="slide" data-demo="caminhao" data-bloco="5" data-quem="Vono" data-tempo="30–40" data-titulo="Um de cada vez x em lote">
+  <div class="topo"><span>Um de cada vez x em lote</span><span class="quem leo">Vono</span></div>
+  <h2 class="mao" style="font-family:var(--f-mao);font-size:72px;font-weight:600;color:var(--caneta)">“Se você fez um loop para processar dados que vieram do banco, desconfie.”</h2>
+  <div class="cam-pista interativo">
+    <div class="cam-ponta">📱<b>App</b></div>
+    <div class="cam-estrada"><div class="cam-caminhao"><span class="cam-carga"></span><span class="cam-emoji">🚚</span></div></div>
+    <div class="cam-ponta">🗄️<b>Banco</b></div>
+  </div>
+  <div class="cam-placar">
+    <div><b class="cam-viagens">0</b><small>viagens</small></div>
+    <div><b class="cam-itens">0</b><small>itens trazidos</small></div>
+    <div><b class="cam-rede">0 ms</b><small>só de rede</small></div>
+  </div>
+  <p class="cam-msg" style="font-size:28px;min-height:84px"></p>
+  <div class="linha interativo" style="gap:8px"><button class="btn cam-modo" data-m="a">Um de cada vez</button><button class="btn cam-modo" data-m="b">Em lote</button></div>
+  <aside class="notas"><p>Regra de bolso do Akita. Exemplo do dia a dia: ir ao mercado 50 vezes, um item por vez. → 1: um de cada vez. → 2: em lote.</p></aside>
+</section>
+
+<section class="slide" data-demo="duelo" data-bloco="5" data-quem="Vono" data-tempo="30–40" data-titulo="Duelo 3: loop de UPDATE x um UPDATE">
+  <div class="topo"><span>⚔️ Duelo 3: a promoção do estagiário</span><span class="quem leo">Vono</span><span class="chip real">medido de verdade</span></div>
+  <div class="duelo">
+    <div class="lado">
+      <div class="cab-lado"><span class="letra">A</span>o script do estagiário</div>
+      <pre class="codigo" style="font-size:19px"><span class="k">for</span> c <span class="k">in</span> db.execute(<span class="s">"SELECT * FROM clientes WHERE cidade = 'São Paulo'"</span>):
+    db.execute(<span class="s">"UPDATE clientes SET telefone = '9' || telefone WHERE id = ?"</span>, (c.id,))
+    db.commit()</pre>
+      <p class="plano">50 mil comandos, 50 mil commits. <b>Com 1 ms de rede: +50 s</b></p>
+      <div class="pista" data-ms="48000" data-rot="≈ 48 s (sem rede)"><i></i><b class="tempo"></b></div>
+    </div>
+    <div class="lado">
+      <div class="cab-lado"><span class="letra">B</span>um comando</div>
+      <pre class="codigo" style="font-size:19px"><span class="k">UPDATE</span> clientes <span class="k">SET</span> telefone = <span class="s">'9'</span> || telefone
+<span class="k">WHERE</span> cidade = <span class="s">'São Paulo'</span>;
+<span class="c">-- MySQL: SET telefone = CONCAT('9', telefone)</span></pre>
+      <p class="plano">Uma viagem, um commit.</p>
+      <div class="pista" data-ms="30" data-rot="0,03 s"><i></i><b class="tempo"></b></div>
+    </div>
+    <div class="voto mao">50 mil linhas. Quanto tempo cada um?</div>
+    <div class="carimbo-mult">&gt; 1.000×</div>
+  </div>
+  <p class="frag nota-lateral"><b>A melhor operação é a que não traz nenhum dado do servidor.</b></p>
+  <aside class="notas"><p>Exemplo do 9º dígito de SP. Medido com 2 mil linhas em arquivo, um commit por linha, extrapolado para 50 mil.</p></aside>
+</section>
+
+<section class="slide" data-demo="duelo" data-bloco="5" data-quem="Vono" data-tempo="30–40" data-titulo="Duelo 4: um por um x em lote">
+  <div class="topo"><span>⚔️ Duelo 4: cadastrar 5 mil pedidos</span><span class="quem leo">Vono</span><span class="chip real">medido de verdade</span></div>
+  <div class="duelo">
+    <div class="lado">
+      <div class="cab-lado"><span class="letra">A</span>um INSERT e um commit por pedido</div>
+      <pre class="codigo" style="font-size:21px"><span class="k">for</span> p <span class="k">in</span> pedidos:
+    db.execute(<span class="s">"INSERT INTO pedidos VALUES (?, ?, ?)"</span>, p)
+    db.commit()</pre>
+      <div class="pista" data-ms="5500" data-rot="5,5 s"><i></i><b class="tempo"></b></div>
+    </div>
+    <div class="lado">
+      <div class="cab-lado"><span class="letra">B</span>todos numa transação só</div>
+      <pre class="codigo" style="font-size:21px">db.executemany(<span class="s">"INSERT INTO pedidos VALUES (?, ?, ?)"</span>, pedidos)
+db.commit()
+<span class="c"># SQL puro: INSERT INTO pedidos VALUES (...), (...), (...);</span></pre>
+      <div class="pista" data-ms="4" data-rot="0,004 s"><i></i><b class="tempo"></b></div>
+    </div>
+    <div class="voto mao">Qual ganha? Por quanto?</div>
+    <div class="carimbo-mult">≈ 1.300×</div>
+  </div>
+  <p class="frag nota-lateral">Cada <code>commit</code> obriga o banco a garantir que o dado chegou ao disco (o <b>D</b> do ACID). Em lote, ele faz isso <b>uma vez</b>.</p>
+  <aside class="notas"><p>Banco em arquivo, 5 mil INSERTs.</p></aside>
+</section>
+
+<section class="slide" data-demo="duelo" data-bloco="5" data-quem="Vono" data-tempo="30–40" data-titulo="Duelo 5: filtrar no código x no banco">
+  <div class="topo"><span>⚔️ Duelo 5: os pedidos de dezembro</span><span class="quem leo">Vono</span><span class="chip real">medido de verdade</span></div>
+  <div class="duelo">
+    <div class="lado">
+      <div class="cab-lado"><span class="letra">A</span>traz TUDO e filtra no código</div>
+      <pre class="codigo" style="font-size:21px">pedidos = db.execute(<span class="s">"SELECT * FROM pedidos"</span>).fetchall()
+dezembro = [p <span class="k">for</span> p <span class="k">in</span> pedidos
+            <span class="k">if</span> p.criado_em &gt;= <span class="s">'2026-12-01'</span>]</pre>
+      <div class="pista" data-ms="227" data-rot="227 ms"><i></i><b class="tempo"></b></div>
+    </div>
+    <div class="lado">
+      <div class="cab-lado"><span class="letra">B</span>o banco filtra (e usa o índice)</div>
+      <pre class="codigo" style="font-size:21px"><span class="k">SELECT</span> * <span class="k">FROM</span> pedidos
+<span class="k">WHERE</span> criado_em &gt;= <span class="s">'2026-12-01'</span>;</pre>
+      <div class="pista" data-ms="27.5" data-rot="27,5 ms"><i></i><b class="tempo"></b></div>
+    </div>
+    <div class="voto mao">300 mil pedidos. E agora?</div>
+    <div class="carimbo-mult">≈ 8×</div>
+  </div>
+  <div class="linha" style="gap:30px;align-items:flex-start">
+    <p class="frag nota-lateral" style="flex:1">Sem rede. Com rede, A ainda precisa <b>transferir 300 mil linhas</b>.</p>
+    <p class="frag nota-lateral" style="flex:1">Bônus: <code>SELECT *</code> trouxe <b class="vermelho">48 MB</b>; <code>SELECT id, nome</code>, <b class="caneta">3,5 MB</b>. Só por causa de uma coluna grande que ninguém usava.</p>
+  </div>
+  <aside class="notas"><p>300 mil pedidos em memória.</p></aside>
+</section>
+
+<section class="slide" data-demo="duelo" data-bloco="5" data-quem="Vono" data-tempo="30–40" data-titulo="Duelo 6: N+1 x JOIN">
+  <div class="topo"><span>⚔️ Duelo 6: N+1 x JOIN</span><span class="quem leo">Vono</span><span class="chip opcional">opcional</span></div>
+  <div class="duelo">
+    <div class="lado">
+      <div class="cab-lado"><span class="letra">A</span>um SELECT por aluno (1000 alunos → 2001 consultas)</div>
+      <pre class="codigo" style="font-size:19px"><span class="k">for</span> aluno_id <span class="k">in</span> ids:
+    turma_id = db.execute(<span class="s">"SELECT turma_id FROM alunos WHERE id = ?"</span>, ...)
+    turma    = db.execute(<span class="s">"SELECT nome FROM turmas WHERE id = ?"</span>, ...)</pre>
+      <p class="plano">sem rede: 2,7 ms</p>
+      <div class="pista" data-ms="2000" data-rot="≈ 2 s com rede"><i></i><b class="tempo"></b></div>
+    </div>
+    <div class="lado">
+      <div class="cab-lado"><span class="letra">B</span>um JOIN</div>
+      <pre class="codigo" style="font-size:19px"><span class="k">SELECT</span> a.id, t.nome <span class="k">FROM</span> alunos a
+<span class="k">JOIN</span> turmas t <span class="k">ON</span> t.id = a.turma_id <span class="k">WHERE</span> a.id &lt;= <span class="n">1000</span>;</pre>
+      <p class="plano">sem rede: 0,5 ms</p>
+      <div class="pista" data-ms="1.5" data-rot="≈ 1,5 ms com rede"><i></i><b class="tempo"></b></div>
+    </div>
+    <div class="voto mao">Com 1 ms de rede por consulta…</div>
+    <div class="carimbo-mult">≈ 1.300×</div>
+  </div>
+  <p class="frag nota-lateral">O erro mais comum com ORM: <code>aluno.turma.nome</code> parece inocente e dispara uma consulta por item. É o “um de cada vez” escondido.</p>
+  <aside class="notas"><p>⏭️ Opcional.</p></aside>
+</section>
+
+<section class="slide" data-demo="placar" data-bloco="5" data-quem="Vono" data-tempo="30–40" data-titulo="Placar dos duelos">
+  <div class="topo"><span>Placar dos duelos</span><span class="quem leo">Vono</span></div>
+  <h2>Quanto mais rápido o jeito certo foi</h2>
+  <div class="placar-svg"></div>
+  <p class="peq">Escala logarítmica: cada linha da grade é 10 vezes a anterior. Medido num SQLite, num notebook comum, sem rede. Num servidor de verdade, com rede no meio, a diferença fica ainda maior.</p>
+  <aside class="notas"><p>O que importa é a proporção entre A e B, não o número exato.</p></aside>
+</section>
+
+<section class="slide" data-demo="unique" data-bloco="5" data-quem="Vono" data-tempo="30–40" data-titulo="Constraints: as regras moram no banco">
+  <div class="topo"><span>Constraints</span><span class="quem leo">Vono</span></div>
+  <h2>As regras moram <span class="marca">no banco</span></h2>
+  <p style="font-size:26px"><code>NOT NULL</code> · <code>UNIQUE</code> · <code>FOREIGN KEY</code> · <code>CHECK</code>. No dBase isso eram dezenas de <code>if</code> espalhados pelo código.</p>
+  <div class="pergunta" style="max-width:1300px"><div class="q" style="font-size:36px">O formulário já valida se o e-mail é repetido. Preciso de <code>UNIQUE</code> no banco?</div></div>
+  <div class="unq-cena interativo">
+    <div class="unq-col"><small>Aluno 1</small><ol class="unq-a"></ol></div>
+    <div class="unq-col"><small>Aluno 2</small><ol class="unq-b"></ol></div>
+    <div class="unq-col"><small>tabela alunos</small><table class="tab unq-tabela"><thead><tr><th>id</th><th>email</th></tr></thead><tbody></tbody></table></div>
+  </div>
+  <div class="linha" style="gap:20px">
+    <div class="linha interativo" style="gap:8px"><button class="btn unq-modo" data-m="sem">Sem UNIQUE</button><button class="btn unq-modo" data-m="com">Com UNIQUE</button></div>
+    <p class="unq-msg" style="font-size:26px;flex:1"></p>
+  </div>
+  <p class="frag mao caneta" style="font-size:40px">Akita: valide no front, no back <b>e</b> no banco, como lavar as mãos antes de uma cirurgia.</p>
+  <aside class="notas"><p>Deixe responder. → 1: sem UNIQUE (dois cadastros iguais). → 2: com UNIQUE (o segundo é recusado).</p></aside>
+</section>
+
+<!-- =========================================================
+     BLOCO 6 · DIVIDIR PARA CONQUISTAR · Ambos · 40–50
+     ========================================================= -->
+<section class="slide capitulo" data-bloco="6" data-nome-bloco="Dividir para conquistar" data-quem="Ambos" data-tempo="40–50" data-titulo="Capítulo 5">
+  <span class="num-cap">capítulo 5</span>
+  <h2>Todas as ETECs do estado</h2>
+  <p class="historia">O governo adotou o CantinaApp em <b>229 escolas</b>, com mais de <b>224 mil alunos</b>. O intervalo é <b>às 10h em todas</b>. Às 10h01 o servidor cai. E o MEC já está ligando: “queremos no <b>Brasil inteiro</b>”.</p>
+  <div class="trilha" data-cap="5"></div>
+  <aside class="notas"><p>📺 CAP 11 e 12. Bloco dos dois.</p></aside>
+</section>
+
+<section class="slide" data-bloco="6" data-quem="Ambos" data-tempo="40–50" data-titulo="Números reais: chute">
+  <div class="topo"><span>Números reais</span><span class="quem ambos">Ambos</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 1fr; gap:60px; align-items:center; flex:1">
+    <div class="col">
+      <h2>O tamanho do problema</h2>
+      <div class="numeros">
+        <div><b>229</b><span>ETECs (Centro Paula Souza)</span></div>
+        <div><b>224 mil+</b><span>alunos matriculados</span></div>
+        <div><b>262</b><span>cursos oferecidos</span></div>
+      </div>
+      <p class="peq">ETECs só existem em São Paulo. Nos outros estados há escolas técnicas estaduais com outros nomes, os Institutos Federais e o Sistema S. Por isso o mapa usa os alunos de ensino técnico de nível médio de todas as redes.</p>
+    </div>
+    <div class="col">
+      <div class="pergunta"><div class="q">Quantos alunos de ensino técnico vocês acham que existem no Brasil?</div>
+        <div class="resposta frag"><span class="mao caneta" style="font-size:80px;line-height:1">1.337.160</span><span>em 2024. Só em SP são <b>273 mil</b>.</span></div></div>
+    </div>
+  </div>
+  <p class="rodape-fonte">Fontes: <a href="https://www.cps.sp.gov.br/etec/">Centro Paula Souza</a>, 2025 · Anuário Brasileiro da Educação Básica 2025 (Censo Escolar 2024).</p>
+  <aside class="notas"><p>Peça o chute antes de revelar.</p></aside>
+</section>
+
+<section class="slide" data-demo="mapa" data-bloco="6" data-quem="Ambos" data-tempo="40–50" data-titulo="Mapa do Brasil">
+  <div class="topo"><span>Alunos de ensino técnico de nível médio, 2024</span><span class="quem ambos">Ambos</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 610px 1fr; gap:44px; flex:1">
+    <div class="mapa-wrap interativo">
+      <div class="mapa-grade"></div>
+      <div class="mapa-dica"></div>
+    </div>
+    <div class="col" style="gap:16px">
+      <div class="mapa-painel" data-p="0">
+        <h2>10h00 em São Paulo</h2>
+        <p>229 ETECs tocam o sinal do intervalo <b>ao mesmo tempo</b>.</p>
+        <div class="mapa-etecs"></div>
+      </div>
+      <div class="mapa-painel" data-p="1">
+        <h2><span class="caneta">1.337.160</span> alunos técnicos no Brasil</h2>
+        <ul>
+          <li><b>São Paulo sozinho</b> tem 273 mil, mais que o <b>Norte e o Centro-Oeste juntos</b> (cerca de 120 mil). Dividir por estado <b class="vermelho">desbalanceia</b>.</li>
+          <li>No <b>Piauí</b>, quase <b>metade</b> (48,3%) dos alunos do ensino médio faz curso técnico, a maior proporção do país.</li>
+        </ul>
+        <p class="peq">Passe o mouse num estado.</p>
+      </div>
+      <div class="mapa-painel" data-p="2">
+        <h2>Por região</h2>
+        <div class="mapa-legenda"></div>
+      </div>
+      <div class="mapa-painel" data-p="3">
+        <h2>Se cada aluno fizer só 2 pedidos por dia…</h2>
+        <p>São cerca de <b>2,7 milhões de pedidos por dia</b>, quase todos <b>na mesma meia hora</b>.</p>
+        <div class="mapa-pico">
+          <div><b class="mapa-pedidos">0</b><small>pedidos por minuto às 10h (estimativa)</small></div>
+          <div class="mapa-servidor"><span>🗄️</span><small>um servidor só</small></div>
+        </div>
+      </div>
+      <div class="linha" style="gap:8px;margin-top:auto">
+        <button class="btn mapa-ir" data-p="0">SP</button>
+        <button class="btn mapa-ir" data-p="1">Brasil</button>
+        <button class="btn mapa-ir" data-p="2">Regiões</button>
+        <button class="btn mapa-ir" data-p="3">Pico das 10h</button>
+      </div>
+    </div>
+  </div>
+  <p class="rodape-fonte" style="left:auto;right:90px">Grade estilizada (cada quadrado é um estado). Fonte: Anuário Brasileiro da Educação Básica 2025, Todos Pela Educação, com MEC/Inep.</p>
+  <aside class="notas"><p>→ SP aceso com as 229 ETECs; → Brasil em mapa de calor; → regiões; → contador do pico e o servidor esquentando.</p></aside>
+</section>
+
+<section class="slide" data-demo="votacao" data-bloco="6" data-quem="Ambos" data-tempo="40–50" data-titulo="Vertical x horizontal: votação">
+  <div class="topo"><span>Vertical x horizontal</span><span class="quem ambos">Ambos</span></div>
+  <div class="pergunta" style="max-width:1300px"><div class="q">A fila da cantina está gigante no intervalo. Vocês contratam uma tia mais rápida ou abrem mais caixas?</div></div>
+  <div class="linha interativo" style="gap:24px">
+    <button class="btn voto-btn" style="font-size:28px;padding:18px 26px">Tia mais rápida · <b>0</b></button>
+    <button class="btn voto-btn" style="font-size:28px;padding:18px 26px">Mais caixas · <b>0</b></button>
+    <button class="btn voto-zerar">zerar</button>
+  </div>
+  <p class="frag mao vermelho" style="font-size:56px">E se a tia faltar?</p>
+  <table class="tab frag" style="font-size:24px">
+    <thead><tr><th></th><th>Vertical (<i>scale up</i>)</th><th>Horizontal (<i>scale out</i>)</th></tr></thead>
+    <tbody>
+      <tr><td>O que é</td><td>Um servidor <b>mais forte</b> (CPU, RAM, SSD)</td><td><b>Mais servidores</b></td></tr>
+      <tr><td>✅</td><td>Simples: o código não muda, o ACID continua fácil</td><td>Quase não tem teto; se um cai, os outros seguem</td></tr>
+      <tr><td>❌</td><td><b>Teto físico</b>; o preço sobe mais rápido que o desempenho; ponto único de falha</td><td>Coordenar é difícil: <b>qual caixa sabe o meu saldo?</b></td></tr>
+    </tbody>
+  </table>
+  <aside class="notas"><p>Clique nos botões para contar os votos. Os bancos relacionais tradicionais nasceram para rodar numa máquina forte: por muito tempo, crescer significou crescer na vertical.</p></aside>
+</section>
+
+<section class="slide" data-bloco="6" data-quem="Ambos" data-tempo="40–50" data-titulo="VS: as tias">
+  <div class="vs-arena">
+    <div class="vs-lutador esq">
+      <div class="vs-avatar" data-tia='{"largura":170,"capa":true,"rapida":true}'></div>
+      <h3><span data-v="tia"></span> Turbo</h3>
+      <small>vertical · uma tia cada vez mais rápida</small>
+    </div>
+    <div class="vs-meio">VS</div>
+    <div class="vs-lutador dir">
+      <div class="vs-avatar time"><div data-tia='{"largura":110,"avental":"#138257"}'></div><div data-tia='{"largura":110,"avental":"#E0761B"}'></div><div data-tia='{"largura":110,"avental":"#7637C4"}'></div></div>
+      <h3>Time de tias</h3>
+      <small>horizontal · várias tias, cada uma num caixa</small>
+    </div>
+  </div>
+  <div class="vs-atributos frag">
+    <div class="vs-attr"><span>Velocidade máxima</span><i style="--v:8"></i><i style="--v:10"></i></div>
+    <div class="vs-attr"><span>Simplicidade</span><i style="--v:10"></i><i style="--v:3"></i></div>
+    <div class="vs-attr"><span>Resistência a falhas</span><i style="--v:2"></i><i style="--v:9"></i></div>
+    <div class="vs-attr"><span>Saldo sempre certo</span><i style="--v:10"></i><i style="--v:5"></i></div>
+  </div>
+  <div class="vs-fichas">
+    <div class="frag"><b>Se ela faltar</b><span>🛑 A cantina fecha</span><span>😌 As outras continuam</span></div>
+    <div class="frag"><b>Custo</b><span>2× mais rápida custa muito mais que 2×</span><span>Cada tia custa o mesmo</span></div>
+    <div class="frag"><b>Caderno de saldos</b><span>✅ Um só: sempre certo</span><span class="vs-cadernos">⚠️ Um por tia? <em>📒📒📒 ❓</em></span></div>
+  </div>
+  <aside class="notas">
+    <p>Fala de fechamento: “Na prática, as empresas <b>começam com a <span data-v="tia"></span> Turbo</b>, que é mais simples, e só montam o <b>time de tias</b> quando a fila não cabe mais numa pessoa só. E o problema do caderno de saldos é o assunto dos próximos blocos.”</p>
+  </aside>
+</section>
+
+<section class="slide" data-demo="fila" data-bloco="6" data-quem="Ambos" data-tempo="40–50" data-titulo="Dividir: cache, réplicas, caixas">
+  <div class="topo"><span>Dividir para conquistar</span><span class="quem ambos">Ambos</span></div>
+  <h2>A maior parte da fila só quer <span class="marca">consultar</span></h2>
+  <div class="fila-cena interativo">
+    <div class="fila-loja">
+      <div class="fila-cardapio">📋 CARDÁPIO<small>coxinha R$ 6 · suco R$ 4 · pão de queijo R$ 3</small></div>
+      <div class="fila-balcao"></div>
+      <div class="fila-consulta"></div>
+    </div>
+    <div class="fila-pessoas"></div>
+  </div>
+  <div class="fila-painel">
+    <div class="fila-num"><b class="fila-n">0</b><small>pessoas na fila</small></div>
+    <div class="fila-num"><b class="fila-dem">0</b><small>chegam / min no caixa</small></div>
+    <div class="fila-num"><b class="fila-cap">0</b><small>atendidas / min</small></div>
+    <div class="fila-turbo-wrap"><small>velocidade da tia</small><div class="fila-turbo"><i></i><span class="teto">teto</span></div><b class="fila-turbo-txt"></b></div>
+    <div class="fila-leg"><span><i class="card"></i>ver cardápio</span><span><i class="saldo"></i>ver saldo</span><span><i class="compra"></i>comprar</span></div>
+  </div>
+  <div class="linha" style="gap:16px;align-items:flex-start">
+    <div class="linha interativo" style="gap:8px">
+      <button class="btn fila-acao" data-a="turbo">⬆ Upgrade</button>
+      <button class="btn fila-acao" data-a="caixa">+ Caixa</button>
+      <button class="btn fila-acao" data-a="cache">Cache</button>
+      <button class="btn fila-acao" data-a="replica">Réplica de leitura</button>
+      <button class="btn fila-acao" data-a="reset">10h00 de novo</button>
+    </div>
+    <p class="fila-msg" style="font-size:24px;flex:1"></p>
+  </div>
+  <aside class="notas">
+    <p><b>Cache</b> (Redis, Memcached) = cardápio na parede. <b>Réplicas de leitura</b> = balcões que só consultam; as vendas vão só para o caixa (banco principal). <b>Arquivar dados velhos</b> = encaixotar os cadernos dos anos anteriores (mover, não apagar).</p>
+    <p>⚠️ O detalhe que volta no próximo bloco: a réplica recebe as mudanças um pouquinho depois, e o cache pode estar desatualizado.</p>
+  </aside>
+</section>
+
+<section class="slide" data-bloco="6" data-quem="Ambos" data-tempo="40–50" data-titulo="Qual mudança primeiro?">
+  <div class="topo"><span>Dividir para conquistar</span><span class="quem ambos">Ambos</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 1fr; gap:60px; flex:1; align-items:center">
+    <div class="pergunta grande"><div class="q">Qual destas mudanças vocês fariam primeiro?</div></div>
+    <div class="col">
+      <div class="resposta frag" style="font-size:34px">
+        <span>Sempre <b>a mais barata</b>: consertar as consultas e criar índices (os blocos anteriores).</span>
+        <span class="mao caneta" style="font-size:52px;line-height:1.1">Muita empresa “precisa de NoSQL” quando na verdade precisava de um índice.</span>
+      </div>
+      <p class="frag nota-lateral">⚠️ Guardem isto: a réplica recebe as mudanças <b>um pouquinho depois</b> do principal, e o cache pode estar <b>desatualizado</b>.</p>
+    </div>
+  </div>
+  <aside class="notas"><p>O ⚠️ é o gancho do caso Mercado Pago no bloco 7.</p></aside>
+</section>
+
+<section class="slide" data-bloco="6" data-quem="Ambos" data-tempo="40–50" data-titulo="Redes sociais crescendo">
+  <div class="topo"><span>Isso aconteceu de verdade</span><span class="quem ambos">Ambos</span></div>
+  <h2>Quando o sucesso derruba o servidor</h2>
+  <div class="casos">
+    <a class="caso frag" href="https://highscalability.com/scaling-twitter-making-twitter-10000-percent-faster/"><small>2007–2009</small><h3>Twitter</h3><p>App Rails comum gravando tweets num <b>MySQL</b>. Caía tanto que a tela de erro, a <b>Fail Whale</b>, virou meme. A saída foi reescrever partes e <b>dividir os dados</b>.</p></a>
+    <a class="caso frag" href="https://instagram-engineering.com/sharding-ids-at-instagram-1cf5a71e5a5c"><small>2012</small><h3>Instagram</h3><p>Comprado por US$ 1 bilhão com cerca de <b>30 milhões de usuários e 13 funcionários</b>, rodando em <b>Postgres</b>.</p></a>
+    <a class="caso frag" href="https://discord.com/blog/how-discord-stores-trillions-of-messages"><small>hoje</small><h3>Discord</h3><p>Guarda <b>trilhões</b> de mensagens. MongoDB → Cassandra → ScyllaDB.</p></a>
+    <a class="caso frag" href="https://www.gamespot.com/articles/pokemon-go-traffic-was-50-times-more-than-expected/1100-6444074/"><small>2016</small><h3>Pokémon GO</h3><p>No lançamento, cerca de <b>50×</b> o tráfego esperado, 10× acima até do pior cenário previsto.</p></a>
+  </div>
+  <aside class="notas"><p>Cada card é um link para a fonte. Instagram e Discord voltam no bloco 8.</p></aside>
+</section>
+
+<!-- =========================================================
+     BLOCO 7 · NOSQL E CONSISTÊNCIA · Vono (+ Shoda) · 50–57
+     ========================================================= -->
+<section class="slide capitulo" data-bloco="7" data-nome-bloco="NoSQL e consistência" data-quem="Vono" data-tempo="50–57" data-titulo="Capítulo 6">
+  <span class="num-cap">capítulo 6</span>
+  <h2>Viralizou no Brasil</h2>
+  <p class="historia">O CantinaApp agora grava <b>cada clique</b>, cada “abriu o cardápio”. E começam as reclamações: <span class="mao vermelho" style="font-size:44px">“meu saldo aparece diferente no celular e no computador!”</span></p>
+  <div class="trilha" data-cap="6"></div>
+  <aside class="notas"><p>📺 CAP 13 e 14.</p></aside>
+</section>
+
+<section class="slide" data-bloco="7" data-quem="Vono" data-tempo="50–57" data-titulo="Por que NoSQL: posso perder uma linha?">
+  <div class="topo"><span>Por que surgiu o NoSQL</span><span class="quem leo">Vono</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 1fr; gap:50px; flex:1">
+    <div class="col">
+      <h2>Para <span class="marca">alguns</span> dados, perder uma linha não faz diferença</h2>
+      <ul>
+        <li>Redes sociais, celulares e games passaram a gerar volumes nunca vistos.</li>
+        <li>Ninguém quer o clique individual: quer a média do dia.</li>
+        <li>Cassandra, DynamoDB, MongoDB… trocam parte da consistência por <b>escrever em vários servidores ao mesmo tempo</b>.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="pergunta" style="transform:rotate(.5deg)"><div class="q">Posso perder uma linha?</div></div>
+      <p class="peq">Cliquem para revelar.</p>
+      <div class="perder interativo">
+        <button class="vira" data-r="nao">Extrato bancário</button>
+        <button class="vira" data-r="nao">Nota do boletim</button>
+        <button class="vira" data-r="sim">Curtidas num post</button>
+        <button class="vira" data-r="sim">Batimento cardíaco de 1 minuto atrás no smartwatch</button>
+        <button class="vira" data-r="sim">“Abriu o cardápio” (estatística)</button>
+      </div>
+    </div>
+  </div>
+  <aside class="notas"><p>A turma classifica cada dado; clique no card para revelar ✅ ou ❌.</p></aside>
+</section>
+
+<section class="slide" data-demo="cap" data-bloco="7" data-quem="Vono" data-tempo="50–57" data-titulo="Teorema CAP: o cabo submarino">
+  <div class="topo"><span>Teorema CAP (Eric Brewer, 2000)</span><span class="quem leo">Vono</span></div>
+  <h2>Quando a rede falha, é preciso escolher</h2>
+  <div class="cap-cena interativo">
+    <div class="cap-srv"><small>São Paulo</small><div class="cap-tela"><span>saldo do João</span><b class="cap-saldo-sp"></b></div></div>
+    <div class="cap-cabo"><i class="cap-pacote"></i><span class="cap-tesoura">✂️</span></div>
+    <div class="cap-srv"><small>Virginia (EUA)</small><div class="cap-tela"><span>saldo do João</span><b class="cap-saldo-va"></b></div></div>
+  </div>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 1fr; gap:40px">
+    <div class="col" style="gap:12px">
+      <p class="cap-msg" style="font-size:27px;min-height:80px"></p>
+      <div class="linha interativo" style="gap:8px">
+        <button class="btn perigo cap-cortar">✂ cortar o cabo</button>
+        <button class="btn cap-gastar">João gasta R$ 30 em SP</button>
+        <button class="btn cap-modo" data-m="C">Consistência</button>
+        <button class="btn cap-modo" data-m="A">Disponibilidade</button>
+        <button class="btn cap-religar">religar</button>
+      </div>
+    </div>
+    <div class="col" style="gap:10px;font-size:25px">
+      <p><b>Consistência:</b> recusar responder até ter certeza do dado certo.</p>
+      <p><b>Disponibilidade:</b> responder mesmo assim, talvez com dado velho.</p>
+      <p><b>Consistência eventual:</b> discordam por alguns segundos, mas <b>eventualmente</b> ficam iguais (as curtidas no seu celular e no do seu amigo).</p>
+    </div>
+  </div>
+  <aside class="notas">
+    <p>→ corta o cabo; → João gasta em SP (Virginia mostra saldo velho); → muda para Consistência (Virginia bloqueia); → religa.</p>
+    <p>Pergunta: “O cabo submarino rompeu. O app do banco deve mostrar o saldo ou bloquear?” → <b>Bloquear</b>. E o Instagram? → <b>Mostrar</b>.</p>
+    <p>Spoiler de faculdade: o CAP não é tão binário; Cassandra e DynamoDB deixam configurar a consistência por operação.</p>
+  </aside>
+</section>
+
+<section class="slide" data-demo="replica" data-bloco="7" data-quem="Shoda" data-tempo="50–57" data-titulo="Caso real: o saldo do Mercado Pago">
+  <div class="topo"><span>História real</span><span class="quem">Shoda conta</span></div>
+  <h2>O saldo que já tinha saído</h2>
+  <p style="font-size:27px">O app do Mercado Pago <b>continuava mostrando o saldo antigo</b> depois que o dinheiro já tinha saído.</p>
+  <div class="rep-cena interativo">
+    <div class="rep-db rep-pri"><small>banco principal</small><span>escritas</span><b></b></div>
+    <div class="rep-fio"><i class="rep-pacote"></i><span class="rep-relogio">0,0 s</span></div>
+    <div class="rep-db rep-rep"><small>réplica de leitura</small><span>consultas</span><b></b></div>
+    <div class="rep-seta">→</div>
+    <div class="rep-app"><small>app</small><span>Saldo em conta</span><b class="rep-app-saldo"></b><em>saldo antigo!</em></div>
+  </div>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 1fr; gap:40px">
+    <div class="col" style="gap:12px">
+      <p class="rep-msg" style="font-size:26px;min-height:76px"></p>
+      <div class="linha interativo" style="gap:10px">
+        <button class="btn pri rep-pix">Fazer Pix de R$ 500</button>
+        <label class="campo">atraso da réplica <input class="rep-atraso" type="range" min="0.5" max="8" step="0.5" value="4" id="rep-atraso" style="width:180px"> <b class="rep-atraso-out"></b></label>
+        <button class="btn rep-zerar">recomeçar</button>
+      </div>
+    </div>
+    <div class="col frag" style="gap:8px;font-size:25px">
+      <p>Foi exatamente o ⚠️ das réplicas e do cache.</p>
+      <p class="mao caneta" style="font-size:40px;line-height:1.1">Isso é aceitável num app de pagamento? E no contador de curtidas?</p>
+      <p>Já aconteceu com vocês? Pedido que aparece depois, notificação atrasada, curtida que some e volta.</p>
+    </div>
+  </div>
+  <aside class="notas"><p><b>Shoda conta</b> (foi ele quem viveu). O Vono passa a palavra e retoma depois. → faz o Pix; o slider controla o atraso da réplica.</p></aside>
+</section>
+
+<!-- =========================================================
+     BLOCO 8 · DISTRIBUIÇÃO E PARTICIONAMENTO · Shoda · 57–66
+     ========================================================= -->
+<section class="slide capitulo" data-bloco="8" data-nome-bloco="Distribuição e particionamento" data-quem="Shoda" data-tempo="57–66" data-titulo="Capítulo 7">
+  <span class="num-cap">capítulo 7</span>
+  <h2>Um servidor não guarda tudo</h2>
+  <p class="historia">Nenhum servidor sozinho guarda os pedidos do Brasil inteiro. É hora de <b>dividir os dados</b> entre vários servidores: particionamento, ou <i>sharding</i>. Mas como dividir?</p>
+  <div class="trilha" data-cap="7"></div>
+  <aside class="notas"><p>📺 CAP 15 e 16. Bloco do Shoda.</p></aside>
+</section>
+
+<section class="slide" data-demo="chave" data-bloco="8" data-quem="Shoda" data-tempo="57–66" data-titulo="Estratégia de chave primária">
+  <div class="topo"><span>Estratégia de chave primária</span><span class="quem">Shoda</span></div>
+  <h2>Todo brasileiro tem um CPF. Toda tabela ganhou um <span class="marca">ID</span>.</h2>
+  <div class="ch-navegador interativo">
+    <div class="ch-barra"><span class="ch-bolinhas"><i></i><i></i><i></i></span><span class="ch-url"></span></div>
+    <div class="ch-card"></div>
+  </div>
+  <p class="ch-msg" style="font-size:28px;min-height:80px"></p>
+  <div class="ch-bits">
+    <div style="flex:41"><b>41 bits</b><span>horário</span></div>
+    <div style="flex:13"><b>13 bits</b><span>nº do shard</span></div>
+    <div style="flex:10"><b>10 bits</b><span>sequência</span></div>
+  </div>
+  <aside class="notas"><p>→ troca 1000 por 999 (vaza); → varre; → 403; → UUID; → ID do Instagram (horário + shard + sequência). Fonte: blog de engenharia do Instagram.</p></aside>
+</section>
+
+<section class="slide" data-demo="receita" data-bloco="8" data-quem="Shoda" data-tempo="57–66" data-titulo="Receita Federal: dividir por estado">
+  <div class="topo"><span>Como dividir o banco da Receita Federal?</span><span class="quem">Shoda</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 520px 1fr; gap:50px; flex:1">
+    <div class="rec-grade"></div>
+    <div class="col" style="gap:16px">
+      <div class="pergunta" style="max-width:none"><div class="q" style="font-size:34px">Vocês são da TI da Receita. Milhões de declarações, de décadas. Não cabe num servidor. Como dividir?</div></div>
+      <p class="rec-msg" style="font-size:27px;min-height:76px"></p>
+      <pre class="codigo rec-codigo" style="font-size:18px"></pre>
+    </div>
+  </div>
+  <p class="rodape-fonte">Carga ilustrativa: alunos técnicos por estado, com cada servidor aguentando 110 mil.</p>
+  <aside class="notas"><p>Deixe a turma responder; a resposta mais comum é “por estado”. → divide SP em dois; → em quatro, e o código vira um monte de if.</p></aside>
+</section>
+
+<section class="slide compacto" data-demo="modulo" data-bloco="8" data-quem="Shoda" data-tempo="57–66" data-titulo="Resto da divisão (módulo)">
+  <div class="topo"><span>Usar o resto da divisão do ID</span><span class="quem">Shoda</span></div>
+  <h2>E se a gente olhar <span class="marca">só para o ID</span>? <code>id % 3</code></h2>
+  <p style="font-size:26px">Resto 0 → servidor A · resto 1 → servidor B · resto 2 → servidor C</p>
+  <div class="pergunta" style="max-width:1300px"><div class="q" style="font-size:34px">Adicionei um <span class="mod-n-out">4</span>º servidor e a conta virou <code>id % <span class="mod-n-out">4</span></code>. Quantos dos 12 usuários mudam de servidor?</div></div>
+  <div class="mod-tabela-wrap"><table class="mod-tab"></table></div>
+  <p class="mod-res" style="font-size:30px"></p>
+  <div class="linha interativo" style="gap:14px">
+    <button class="btn mod-mostrar">Mostrar <code>id % N</code></button>
+    <label class="campo">servidores: <input class="mod-n" type="range" min="2" max="8" value="4" id="mod-n" style="width:200px"> <b class="mod-n-out">4</b></label>
+    <button class="btn pri mod-testar">Testar com 1 milhão de IDs</button>
+  </div>
+  <p class="mod-milhao" style="font-size:28px"></p>
+  <aside class="notas"><p>Faça no quadro antes de revelar. 9 de 12 (75%) mudam. Com 1 milhão de IDs, o resultado é o mesmo. Adicionar um servidor obriga a mover quase o banco inteiro.</p></aside>
+</section>
+
+<section class="slide" data-demo="anel" data-bloco="8" data-quem="Shoda" data-tempo="57–66" data-titulo="Anel de hash">
+  <div class="topo"><span>A solução: hashing consistente</span><span class="quem">Shoda</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 660px 1fr; gap:44px; flex:1">
+    <div class="anel-svg interativo"></div>
+    <div class="col" style="gap:16px">
+      <h2>O anel de hash</h2>
+      <p style="font-size:24px"><b>Hash:</b> transforma qualquer coisa num número. A mesma entrada dá sempre o mesmo número, e os números ficam bem espalhados. Imagine um <b>relógio</b> com todos os valores possíveis.</p>
+      <p class="anel-msg" style="font-size:26px;min-height:110px"></p>
+      <div class="anel-comp">
+        <div><small>no anel, mudaram</small><b class="anel-v-anel">–</b></div>
+        <div><small>com módulo, mudariam</small><b class="anel-v-mod vermelho">–</b></div>
+      </div>
+      <div class="linha interativo" style="gap:8px">
+        <button class="btn pri anel-d">+ servidor D (10h)</button>
+        <button class="btn perigo anel-a">− servidor A</button>
+        <button class="btn anel-reset">recomeçar</button>
+      </div>
+      <form class="anel-form linha interativo" style="gap:8px"><input class="anel-nome" type="text" placeholder="nome de alguém da turma" id="anel-nome" style="padding:10px 12px;border:2px solid var(--tinta);border-radius:8px;font-size:21px;width:300px"><button class="btn">Jogar no anel</button></form>
+    </div>
+  </div>
+  <aside class="notas">
+    <p>Peça nomes da turma e jogue no anel. → entra o D às 10h (só o arco entre 8h e 10h muda); → sai o A (o arco dele passa para o B).</p>
+    <p>Na prática cada servidor ocupa várias posições no anel (nós virtuais). Cassandra e DynamoDB usam essa ideia.</p>
+  </aside>
+</section>
+
+<section class="slide" data-bloco="8" data-quem="Shoda" data-tempo="57–66" data-titulo="O preço e casos reais">
+  <div class="topo"><span>O preço</span><span class="quem">Shoda</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 1fr; gap:60px; flex:1">
+    <div class="col">
+      <h2>Buscar pela chave: <span class="caneta">rapidíssimo</span>. Somar tudo: <span class="vermelho">caro</span>.</h2>
+      <p>Uma consulta que precisa olhar <b>todos</b> os servidores (ex.: “total de vendas de todo mundo”) fica cara.</p>
+      <p class="nota-lateral">No mundo distribuído, <b>a forma de dividir precisa ser pensada antes</b>.</p>
+    </div>
+    <div class="col">
+      <a class="caso frag" href="https://instagram-engineering.com/sharding-ids-at-instagram-1cf5a71e5a5c"><h3>Instagram</h3><p>Em vez de correr atrás do hype do NoSQL, dividiu o <b>Postgres em milhares de shards lógicos</b>, que no começo moravam em poucas máquinas e depois foram espalhados.</p></a>
+      <a class="caso frag" href="https://discord.com/blog/how-discord-stores-trillions-of-messages"><h3>Discord</h3><p>Trilhões de mensagens: chegou a <b>177 servidores</b> de Cassandra. Em 2022 migrou para o ScyllaDB e passou a precisar de <b>72</b>.</p></a>
+    </div>
+  </div>
+  <aside class="notas"><p>Fecha o bloco 8.</p></aside>
+</section>
+
+<!-- =========================================================
+     BLOCO 9 · FECHAMENTO · Ambos · 66–70
+     ========================================================= -->
+<section class="slide" data-bloco="9" data-nome-bloco="Fechamento" data-quem="Ambos" data-tempo="66–70" data-titulo="O arroz com feijão">
+  <div class="topo"><span>Fechamento</span><span class="quem ambos">Ambos</span></div>
+  <h2>O arroz com feijão resolve a grande maioria dos casos</h2>
+  <div class="prato">
+    <div class="frag"><b>Postgres ou MySQL</b><span>bem usado: consultas boas e índices certos</span></div>
+    <div class="frag"><b>Redis</b><span>para cache</span></div>
+    <div class="frag"><b>Filas</b><span>para trabalhos em segundo plano</span></div>
+  </div>
+  <p class="frag mao caneta" style="font-size:72px;line-height:1">“Você não é a Netflix.”</p>
+  <p class="frag" style="font-size:26px">Big Data de verdade é para empresas grandes, com time especializado.</p>
+  <aside class="notas"><p>📺 CAP 18.</p></aside>
+</section>
+
+<section class="slide" data-bloco="9" data-quem="Ambos" data-tempo="66–70" data-titulo="Ferramentas passam, fundamentos ficam">
+  <div class="topo"><span>Fechamento</span><span class="quem ambos">Ambos</span></div>
+  <div class="lado-a-lado" style="grid-template-columns: 1fr 1fr; gap:60px; flex:1; align-items:center">
+    <div class="col">
+      <h2>Ferramentas passam. <span class="marca">Fundamentos ficam.</span></h2>
+      <p>A Ashton-Tate (do dBase) e a Nantucket (do Clipper) dominaram os anos 80 e 90. Hoje quase ninguém lembra delas.</p>
+      <p>Estruturas de dados, árvores, redes: isso não envelhece.</p>
+    </div>
+    <div class="cartao frag" style="transform:rotate(1deg)">
+      <h3>Fuja do hype</h3>
+      <p style="margin-top:10px">Briga de “SQL x NoSQL” em rede social não conhece o seu problema. Entenda o problema primeiro e leia a <b>documentação oficial</b>.</p>
+    </div>
+  </div>
+  <aside class="notas"></aside>
+</section>
+
+<section class="slide" data-bloco="9" data-quem="Ambos" data-tempo="66–70" data-titulo="Rodada final: qual banco?">
+  <div class="topo"><span>Rodada final</span><span class="quem ambos">Ambos</span></div>
+  <h2>Qual banco vocês usariam?</h2>
+  <p class="peq">Cliquem no cenário para ver a resposta esperada.</p>
+  <div class="cenarios interativo">
+    <button class="vira cenario"><span class="frente">App de TCC para controlar o empréstimo de livros da biblioteca</span><span class="verso"><b>SQLite</b>, ou Postgres/MySQL se tiver servidor. Sem drama.</span></button>
+    <button class="vira cenario"><span class="frente">App de academia que precisa funcionar <b>offline</b> no celular</span><span class="verso"><b>SQLite</b> no celular, sincronizando depois.</span></button>
+    <button class="vira cenario"><span class="frente">Rede social com 10 milhões de usuários</span><span class="verso"><b>Postgres</b> para contas e pagamentos + <b>Redis</b> de cache + algo distribuído (ex.: <b>Cassandra</b>) para curtidas e eventos.</span></button>
+  </div>
+  <aside class="notas"><p>Deixe a turma responder cada cenário antes de virar o card.</p></aside>
+</section>
+
+<section class="slide fim" data-bloco="9" data-quem="Ambos" data-tempo="66–70" data-titulo="Obrigado">
+  <div class="linha-tempo">
+    <span style="--i:7">anel de shards</span><span style="--i:6">réplicas e cache</span><span style="--i:5">servidor</span><span style="--i:4">árvore B</span><span style="--i:3">.DBF</span><span style="--i:2">array</span><span style="--i:1">caderno</span>
+  </div>
+  <div class="fim-centro">
+    <div data-tia='{"largura":170}'></div>
+    <div class="col" style="gap:14px">
+      <h1 style="font-size:130px">Obrigado!</h1>
+      <p style="font-size:30px">A <span data-v="tia"></span> agradece. O caderno também.</p>
+      <div class="autores linha"><span class="quem">Shoda</span><span class="quem leo">Vono</span></div>
+    </div>
+  </div>
+  <div class="aprofundar">
+    <b>Para se aprofundar:</b>
+    <a href="https://www.youtube.com/watch?v=Bfm3Ms2cTg0">Akitando #143: Discutindo sobre Banco de Dados</a> ·
+    <a href="https://www.sqlite.org/docs.html">documentação do SQLite</a> ·
+    <a href="https://www.postgresql.org/docs/">documentação do PostgreSQL</a> ·
+    <a href="https://discord.com/blog/how-discord-stores-trillions-of-messages">blog do Discord</a>
+  </div>
+  <aside class="notas"><p>Perguntas. Se sobrar tempo, o próximo slide tem o conteúdo reserva.</p></aside>
+</section>
+
+<section class="slide" data-bloco="R" data-nome-bloco="Reserva" data-quem="Ambos" data-tempo="" data-titulo="Conteúdo reserva">
+  <div class="topo"><span>Conteúdo reserva</span><span class="chip opcional">se sobrar tempo</span></div>
+  <h2>Se sobrar tempo ou alguém perguntar</h2>
+  <table class="tab" style="font-size:22px">
+    <thead><tr><th>Tema</th><th>Resumo</th></tr></thead>
+    <tbody>
+      <tr><td>⚔️ Função na coluna x intervalo</td><td><code>strftime('%Y', nascimento) = '2008'</code> fez SCAN em <b>20 ms</b>; <code>nascimento &gt;= '2008-01-01' AND &lt; '2009-01-01'</code> usou o índice em <b>3,9 ms</b></td></tr>
+      <tr><td>⚔️ Somar no código x <code>GROUP BY</code></td><td>209 ms x 116 ms localmente. O ganho real é não transferir 300 mil linhas: o banco devolve 12</td></tr>
+      <tr><td>Mito do JSON</td><td>O MongoDB guarda BSON (binário) numa B+Tree. SQL é linguagem e JSON é formato; nenhum dos dois diz como o banco guarda por dentro</td></tr>
+      <tr><td>Relatório em PDF com <i>streaming</i></td><td>Ler e gravar linha a linha mantém a memória com teto fixo</td></tr>
+      <tr><td>Monitoramento</td><td>“Se você não mede, não conserta”</td></tr>
+      <tr><td>Cartão SD e SSD duvidoso</td><td>Não são lugar para guardar dados importantes</td></tr>
+      <tr><td>Data Warehouse e Data Lake</td><td>Onde se guardam e analisam montanhas de dados históricos</td></tr>
+    </tbody>
+  </table>
+  <aside class="notas"></aside>
+</section>
+
+<div id="hud"><div class="barras"></div><span class="cronometro" hidden>00:00</span><span class="num"></span></div>
+</main>
+
+<!-- painéis fora do palco -->
+<div id="painel-notas" hidden></div>
+<div id="tela-preta" hidden></div>
+
+<div class="sobre" id="visao" hidden>
+  <div class="caixa">
+    <div class="linha" style="justify-content:space-between;margin-bottom:12px"><h3>Todos os slides</h3><button class="btn" data-fechar>Fechar (Esc)</button></div>
+    <div class="visao-geral"></div>
+  </div>
+</div>
+
+<div class="sobre" id="config" hidden>
+  <div class="caixa" style="max-width:640px">
+    <h3>Nomes da história</h3>
+    <form class="config-form" id="cfg-form">
+      <label>Nome da tia <input id="cfg-tia" type="text" autocomplete="off"></label>
+      <label>Nome da cantina <input id="cfg-cantina" type="text" autocomplete="off"></label>
+      <div class="linha" style="gap:10px">
+        <button class="btn pri" type="submit">Salvar</button>
+        <button class="btn" type="button" id="cfg-restaurar">Restaurar padrão</button>
+        <button class="btn" type="button" data-fechar>Cancelar</button>
+      </div>
+    </form>
+    <div class="atalhos">
+      <kbd>→ Espaço</kbd><span>avança (também com clique no slide)</span>
+      <kbd>← Backspace</kbd><span>volta (também com clique direito)</span>
+      <kbd>O · Esc</kbd><span>visão geral dos slides</span>
+      <kbd>N</kbd><span>notas de quem apresenta, com bloco e tempo</span>
+      <kbd>T</kbd><span>inicia ou pausa o cronômetro (fica vermelho se o bloco estourar o tempo)</span>
+      <kbd>C</kbd><span>estes nomes</span>
+      <kbd>F</kbd><span>tela cheia</span>
+      <kbd>B</kbd><span>tela preta</span>
+    </div>
+  </div>
+</div>
+
+<script src="js/deck.js"></script>
+<script src="js/util.js"></script>
+<script src="js/demos-inicio.js"></script>
+<script src="js/arvore.js"></script>
+<script src="js/demos-meio.js"></script>
+<script src="js/demos-fim.js"></script>
+<script>
+  /* cards que viram com clique */
+  document.querySelectorAll('.vira').forEach(b => b.addEventListener('click', () => b.classList.toggle('virado')));
+</script>
+</body>
+</html>

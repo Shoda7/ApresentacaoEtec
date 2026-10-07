@@ -1,0 +1,24 @@
+# Sistema operacional
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editores e IDEs
+.vs/
+.vscode/
+.idea/
+*.swp
+
+# Python (servidor local de teste)
+__pycache__/
+*.pyc
+
+# Configurações locais do Claude Code
+.claude/settings.local.json
+
+# Logs e temporários
+*.log
+*.tmp
+
+# Anotações internas de planejamento
+RESUMO-SESSAO.md
